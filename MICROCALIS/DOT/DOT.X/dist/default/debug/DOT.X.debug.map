@@ -1,0 +1,48 @@
+MPLINK 5.09, LINKER
+Linker Map File - Created Sun Nov 04 17:56:08 2018
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x00005c
+                   .cinit    romdata   0x00002e    program   0x000004
+.config_2007_BUILD/DEFAULT/DEBUG/DOT.O       code   0x002007    program   0x000002
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x00002f      
+                            0x002007    0x002007      
+            49 out of 8454 program addresses used, program memory utilization is 0%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                  BEKLEME   0x000025    program     static C:\Users\black\Desktop\MICROCALIS\DOT\DOT.X\DOT.asm
+                 BEKLEME2   0x000027    program     static C:\Users\black\Desktop\MICROCALIS\DOT\DOT.X\DOT.asm
+             BEKLEMEDONGU   0x000029    program     static C:\Users\black\Desktop\MICROCALIS\DOT\DOT.X\DOT.asm
+                    ISLEM   0x000009    program     static C:\Users\black\Desktop\MICROCALIS\DOT\DOT.X\DOT.asm
+                   LOOKBB   0x000019    program     static C:\Users\black\Desktop\MICROCALIS\DOT\DOT.X\DOT.asm
+                   LOOKCC   0x00001f    program     static C:\Users\black\Desktop\MICROCALIS\DOT\DOT.X\DOT.asm
+                     MAIN   0x000000    program     static C:\Users\black\Desktop\MICROCALIS\DOT\DOT.X\DOT.asm
+                      YAK   0x00000f    program     static C:\Users\black\Desktop\MICROCALIS\DOT\DOT.X\DOT.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                     MAIN   0x000000    program     static C:\Users\black\Desktop\MICROCALIS\DOT\DOT.X\DOT.asm
+                    ISLEM   0x000009    program     static C:\Users\black\Desktop\MICROCALIS\DOT\DOT.X\DOT.asm
+                      YAK   0x00000f    program     static C:\Users\black\Desktop\MICROCALIS\DOT\DOT.X\DOT.asm
+                   LOOKBB   0x000019    program     static C:\Users\black\Desktop\MICROCALIS\DOT\DOT.X\DOT.asm
+                   LOOKCC   0x00001f    program     static C:\Users\black\Desktop\MICROCALIS\DOT\DOT.X\DOT.asm
+                  BEKLEME   0x000025    program     static C:\Users\black\Desktop\MICROCALIS\DOT\DOT.X\DOT.asm
+                 BEKLEME2   0x000027    program     static C:\Users\black\Desktop\MICROCALIS\DOT\DOT.X\DOT.asm
+             BEKLEMEDONGU   0x000029    program     static C:\Users\black\Desktop\MICROCALIS\DOT\DOT.X\DOT.asm
+
+

@@ -1,0 +1,5 @@
+Warning[207] C:\USERS\MU\DESKTOP\ASSEMBLY\LCD_8BIT.X\NEWASMTEMPLATE1.ASM 4 : Found label after column 1. (TEMP)
+Warning[207] C:\USERS\MU\DESKTOP\ASSEMBLY\LCD_8BIT.X\NEWASMTEMPLATE1.ASM 5 : Found label after column 1. (BEKLE)
+Warning[207] C:\USERS\MU\DESKTOP\ASSEMBLY\LCD_8BIT.X\NEWASMTEMPLATE1.ASM 6 : Found label after column 1. (BEKLE2)
+Message[302] C:\USERS\MU\DESKTOP\ASSEMBLY\LCD_8BIT.X\NEWASMTEMPLATE1.ASM 10 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\MU\DESKTOP\ASSEMBLY\LCD_8BIT.X\NEWASMTEMPLATE1.ASM 11 : Register in operand not in bank 0.  Ensure that bank bits are correct.

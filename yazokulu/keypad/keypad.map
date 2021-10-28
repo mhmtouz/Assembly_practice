@@ -1,0 +1,80 @@
+MPLINK 4.49, Linker
+Linker Map File - Created Wed Jul 10 00:18:14 2019
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000000
+                   .org_1       code   0x000000    program   0x000002
+                   .org_2       code   0x000004    program   0x00015e
+    .config_2007_KEYPAD.O       code   0x002007    program   0x000002
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000000      
+                            0x000004    0x0000b2      
+                            0x002007    0x002007      
+            177 out of 8454 program addresses used, program memory utilization is 2%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                      B10   0x00005b    program     static C:\yazokulu\keypad\keypad.asm
+                      B11   0x000062    program     static C:\yazokulu\keypad\keypad.asm
+                      B12   0x000069    program     static C:\yazokulu\keypad\keypad.asm
+                      B13   0x000070    program     static C:\yazokulu\keypad\keypad.asm
+                      B14   0x000079    program     static C:\yazokulu\keypad\keypad.asm
+                      B15   0x000080    program     static C:\yazokulu\keypad\keypad.asm
+                      B16   0x000087    program     static C:\yazokulu\keypad\keypad.asm
+                       B2   0x00001f    program     static C:\yazokulu\keypad\keypad.asm
+                       B3   0x000026    program     static C:\yazokulu\keypad\keypad.asm
+                       B4   0x00002d    program     static C:\yazokulu\keypad\keypad.asm
+                       B5   0x000034    program     static C:\yazokulu\keypad\keypad.asm
+                       B6   0x00003d    program     static C:\yazokulu\keypad\keypad.asm
+                       B7   0x000044    program     static C:\yazokulu\keypad\keypad.asm
+                       B8   0x00004b    program     static C:\yazokulu\keypad\keypad.asm
+                       B9   0x000052    program     static C:\yazokulu\keypad\keypad.asm
+                    BEKLE   0x0000a4    program     static C:\yazokulu\keypad\keypad.asm
+                   BEKLE1   0x0000a8    program     static C:\yazokulu\keypad\keypad.asm
+                   BEKLE2   0x0000aa    program     static C:\yazokulu\keypad\keypad.asm
+                   BEKLE3   0x0000ac    program     static C:\yazokulu\keypad\keypad.asm
+                   GOSTER   0x00008e    program     static C:\yazokulu\keypad\keypad.asm
+                     LOOP   0x000013    program     static C:\yazokulu\keypad\keypad.asm
+                  PROGRAM   0x000005    program     static C:\yazokulu\keypad\keypad.asm
+                  TUSTARA   0x000016    program     static C:\yazokulu\keypad\keypad.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                  PROGRAM   0x000005    program     static C:\yazokulu\keypad\keypad.asm
+                     LOOP   0x000013    program     static C:\yazokulu\keypad\keypad.asm
+                  TUSTARA   0x000016    program     static C:\yazokulu\keypad\keypad.asm
+                       B2   0x00001f    program     static C:\yazokulu\keypad\keypad.asm
+                       B3   0x000026    program     static C:\yazokulu\keypad\keypad.asm
+                       B4   0x00002d    program     static C:\yazokulu\keypad\keypad.asm
+                       B5   0x000034    program     static C:\yazokulu\keypad\keypad.asm
+                       B6   0x00003d    program     static C:\yazokulu\keypad\keypad.asm
+                       B7   0x000044    program     static C:\yazokulu\keypad\keypad.asm
+                       B8   0x00004b    program     static C:\yazokulu\keypad\keypad.asm
+                       B9   0x000052    program     static C:\yazokulu\keypad\keypad.asm
+                      B10   0x00005b    program     static C:\yazokulu\keypad\keypad.asm
+                      B11   0x000062    program     static C:\yazokulu\keypad\keypad.asm
+                      B12   0x000069    program     static C:\yazokulu\keypad\keypad.asm
+                      B13   0x000070    program     static C:\yazokulu\keypad\keypad.asm
+                      B14   0x000079    program     static C:\yazokulu\keypad\keypad.asm
+                      B15   0x000080    program     static C:\yazokulu\keypad\keypad.asm
+                      B16   0x000087    program     static C:\yazokulu\keypad\keypad.asm
+                   GOSTER   0x00008e    program     static C:\yazokulu\keypad\keypad.asm
+                    BEKLE   0x0000a4    program     static C:\yazokulu\keypad\keypad.asm
+                   BEKLE1   0x0000a8    program     static C:\yazokulu\keypad\keypad.asm
+                   BEKLE2   0x0000aa    program     static C:\yazokulu\keypad\keypad.asm
+                   BEKLE3   0x0000ac    program     static C:\yazokulu\keypad\keypad.asm
+
+

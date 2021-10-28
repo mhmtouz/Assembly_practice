@@ -1,0 +1,753 @@
+MPASM 5.81                NEWASMTEMPLATE.ASM   7-24-2020  10:26:16         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001     LIST P=16F877A
+                      00002     INCLUDE <P16F877A.INC>
+                      00001         LIST
+                      00002 
+                      00003 ;==========================================================================
+                      00004 ; Build date : Jul 23 2018
+                      00005 ;  MPASM PIC16F877A processor include
+                      00006 ; 
+                      00007 ;  (c) Copyright 1999-2018 Microchip Technology, All rights reserved
+                      00008 ;==========================================================================
+                      00009 
+                      00567         LIST
+2007   3F7A           00003     __CONFIG _CP_OFF &_WDT_OFF &_HS_OSC &_PWRTE_OFF &_LVP_OFF
+                      00004 ;  KOD KORUMA, UYKU MODU, HS OSC SEÇ?M?, -- , LOW PROGRAMMING KAPALI
+Warning[207]: Found label after column 1. (SAYAC0)
+  00000020            00005  SAYAC0 EQU 0X20
+Warning[207]: Found label after column 1. (SAYAC1)
+  00000021            00006  SAYAC1 EQU 0X21
+Warning[207]: Found label after column 1. (SAYAC2)
+  00000022            00007  SAYAC2 EQU 0X22
+Warning[207]: Found label after column 1. (KAYDIR)
+  00000023            00008  KAYDIR EQU 0X23
+Warning[207]: Found label after column 1. (BIRLER)
+  00000024            00009  BIRLER EQU 0X24
+Warning[207]: Found label after column 1. (ONLAR)
+  00000025            00010  ONLAR  EQU 0X25
+Warning[207]: Found label after column 1. (YUZLER)
+  00000026            00011  YUZLER EQU 0X26
+Warning[207]: Found label after column 1. (BINLER)
+  00000027            00012  BINLER EQU 0X27
+Warning[207]: Found label after column 1. (BIRKNT)
+  00000028            00013  BIRKNT EQU 0X28
+Warning[207]: Found label after column 1. (ONKNT)
+  00000029            00014  ONKNT  EQU 0X29
+Warning[207]: Found label after column 1. (YUZKNT)
+  0000002A            00015  YUZKNT EQU 0X2A
+Warning[207]: Found label after column 1. (BINKNT)
+  0000002B            00016  BINKNT EQU 0X2B
+                      00017 ; ----------------------- BA?LANGIÇ AYARLARI //KESME ALTPROGRAMI
+                      00018     ORG 0X00
+0000   2???           00019     GOTO MAIN       
+                      00020     
+                      00021     ORG 0X04
+0004   2???           00022     GOTO MAIN       
+                      00023 ; ----------------------- STATUS,RP0 (BANKSEL ARASI GEÇ??)
+                      00024 BANK0 MACRO
+                      00025     BCF STATUS,5    
+                      00026     ENDM
+                      00027 BANK1 MACRO
+                      00028     BSF STATUS,5
+                      00029     ENDM
+                      00030 ;---------------------- BA?LANGIÇ ALTPROGRAM VE SONSUZ DONGU    
+                      00031 MAIN BANK1
+MPASM 5.81                NEWASMTEMPLATE.ASM   7-24-2020  10:26:16         PAGE  2
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0005   1683               M     BSF STATUS,5
+0006   30F0           00032     MOVLW B'11110000'
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0007   0088           00033     MOVWF TRISD
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0008   0186           00034     CLRF TRISB
+                      00035     BANK0
+0009   1283               M     BCF STATUS,5    
+000A   0188           00036     CLRF PORTD
+000B   0186           00037     CLRF PORTB 
+000C   3000           00038     MOVLW 0X00
+000D   00A7           00039     MOVWF BINLER    ;RB0
+000E   3000           00040     MOVLW 0X00
+000F   00A6           00041     MOVWF YUZLER    ;RB1
+0010   3000           00042     MOVLW 0X00
+0011   00A5           00043     MOVWF ONLAR     ;RB2
+0012   3000           00044     MOVLW 0X00
+0013   00A4           00045     MOVWF BIRLER    ;RB3
+0014   0103           00046     CLRW
+                      00047 
+0015                  00048 LOOP
+0015   2???           00049     CALL GOSTER ;6MS
+0016   2???           00050     CALL KEYPAD ;4*1.5MS 6MS 
+0017   2???           00051     GOTO LOOP
+                      00052 
+0018                  00053 KEYPAD
+                      00054 ;----------- 1. SATIR TARAMA BA?LADI -----------
+0018   30F7           00055     MOVLW B'11110111'
+0019   0088           00056     MOVWF PORTD ; 1. SATIR SEC?LD? 1234
+001A   2???           00057     CALL BEKLE
+001B                  00058 B1
+001B   1A08           00059     BTFSC PORTD,4
+001C   2???           00060     GOTO B2
+001D   3000           00061     MOVLW 0X00
+001E   00A5           00062     MOVWF ONLAR
+001F   3001           00063     MOVLW 0X01
+0020   00A4           00064     MOVWF BIRLER
+0021   0008           00065     RETURN
+0022                  00066 B2
+0022   1A88           00067     BTFSC PORTD,5
+0023   2???           00068     GOTO B3
+0024   3000           00069     MOVLW 0X00
+0025   00A5           00070     MOVWF ONLAR
+0026   3002           00071     MOVLW 0X02
+0027   00A4           00072     MOVWF BIRLER
+0028   0008           00073     RETURN
+0029                  00074 B3
+0029   1B08           00075     BTFSC PORTD,6
+002A   2???           00076     GOTO B4
+002B   3000           00077     MOVLW 0X00
+002C   00A5           00078     MOVWF ONLAR
+002D   3003           00079     MOVLW 0X03
+002E   00A4           00080     MOVWF BIRLER
+MPASM 5.81                NEWASMTEMPLATE.ASM   7-24-2020  10:26:16         PAGE  3
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+002F   0008           00081     RETURN
+0030                  00082 B4
+0030   1B88           00083     BTFSC PORTD,7
+0031   2???           00084     GOTO B5
+0032   3000           00085     MOVLW 0X00
+0033   00A5           00086     MOVWF ONLAR
+0034   3004           00087     MOVLW 0X04
+0035   00A4           00088     MOVWF BIRLER
+0036   0008           00089     RETURN
+                      00090 ;----------- 1. SATIR SON --------------
+                      00091 ;----------- 2. SATIR TARAMA BA?LADI -----------
+                      00092     
+0037                  00093 B5
+0037   30FB           00094     MOVLW B'11111011'
+0038   0088           00095     MOVWF PORTD ; 2. SATIR SEC?LD? 1234
+0039   2???           00096     CALL BEKLE
+003A   1A08           00097     BTFSC PORTD,4
+003B   2???           00098     GOTO B6
+003C   3000           00099     MOVLW 0X00
+003D   00A5           00100     MOVWF ONLAR
+003E   3005           00101     MOVLW 0X05
+003F   00A4           00102     MOVWF BIRLER
+0040   0008           00103     RETURN
+0041                  00104 B6
+0041   1A88           00105     BTFSC PORTD,5
+0042   2???           00106     GOTO B7
+0043   3000           00107     MOVLW 0X00
+0044   00A5           00108     MOVWF ONLAR
+0045   3006           00109     MOVLW 0X06
+0046   00A4           00110     MOVWF BIRLER
+0047   0008           00111     RETURN
+0048                  00112 B7
+0048   1B08           00113     BTFSC PORTD,6
+0049   2???           00114     GOTO B8
+004A   3000           00115     MOVLW 0X00
+004B   00A5           00116     MOVWF ONLAR
+004C   3007           00117     MOVLW 0X07
+004D   00A4           00118     MOVWF BIRLER
+004E   0008           00119     RETURN
+004F                  00120 B8
+004F   1B88           00121     BTFSC PORTD,7
+0050   2???           00122     GOTO B9
+0051   3000           00123     MOVLW 0X00
+0052   00A5           00124     MOVWF ONLAR
+0053   3008           00125     MOVLW 0X08
+0054   00A4           00126     MOVWF BIRLER
+0055   0008           00127     RETURN
+                      00128 ;----------- 2. SATIR SON --------------
+                      00129 ;----------- 3. SATIR TARAMA BA?LADI -----------
+                      00130     
+0056                  00131 B9
+0056   30FD           00132     MOVLW B'11111101'
+0057   0088           00133     MOVWF PORTD ; 3. SATIR SEC?LD? 1234
+MPASM 5.81                NEWASMTEMPLATE.ASM   7-24-2020  10:26:16         PAGE  4
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0058   2???           00134     CALL BEKLE
+0059   1A08           00135     BTFSC PORTD,4
+005A   2???           00136     GOTO B10
+005B   3000           00137     MOVLW 0X00
+005C   00A5           00138     MOVWF ONLAR
+005D   3009           00139     MOVLW 0X09
+005E   00A4           00140     MOVWF BIRLER
+005F   0008           00141     RETURN
+0060                  00142 B10
+0060   1A88           00143     BTFSC PORTD,5
+0061   2???           00144     GOTO B11
+0062   3001           00145     MOVLW 0X01
+0063   00A5           00146     MOVWF ONLAR
+0064   3000           00147     MOVLW 0X00
+0065   00A4           00148     MOVWF BIRLER
+0066   0008           00149     RETURN
+0067                  00150 B11
+0067   1B08           00151     BTFSC PORTD,6
+0068   2???           00152     GOTO B12
+0069   3001           00153     MOVLW 0X01
+006A   00A5           00154     MOVWF ONLAR
+006B   3001           00155     MOVLW 0X01
+006C   00A4           00156     MOVWF BIRLER
+006D   0008           00157     RETURN
+006E                  00158 B12
+006E   1B88           00159     BTFSC PORTD,7
+006F   2???           00160     GOTO B13
+0070   3001           00161     MOVLW 0X01
+0071   00A5           00162     MOVWF ONLAR
+0072   3002           00163     MOVLW 0X02
+0073   00A4           00164     MOVWF BIRLER
+0074   0008           00165     RETURN
+                      00166 ;----------- 3. SATIR SON -------------- 
+                      00167 ;----------- 4. SATIR TARAMA BA?LADI -----------
+0075                  00168 B13
+0075   30FE           00169     MOVLW B'11111110'
+0076   0088           00170     MOVWF PORTD ; 4. SATIR SEC?LD? 1234
+0077   2???           00171     CALL BEKLE
+0078   1A08           00172     BTFSC PORTD,4
+0079   2???           00173     GOTO B14
+007A   3001           00174     MOVLW 0X01
+007B   00A5           00175     MOVWF ONLAR
+007C   3003           00176     MOVLW 0X03
+007D   00A4           00177     MOVWF BIRLER
+007E   0008           00178     RETURN
+007F                  00179 B14
+007F   1A88           00180     BTFSC PORTD,5
+0080   2???           00181     GOTO B15
+0081   3001           00182     MOVLW 0X01
+0082   00A5           00183     MOVWF ONLAR
+0083   3004           00184     MOVLW 0X04
+0084   00A4           00185     MOVWF BIRLER
+0085   0008           00186     RETURN
+MPASM 5.81                NEWASMTEMPLATE.ASM   7-24-2020  10:26:16         PAGE  5
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0086                  00187 B15
+0086   1B08           00188     BTFSC PORTD,6
+0087   2???           00189     GOTO B16
+0088   3001           00190     MOVLW 0X01
+0089   00A5           00191     MOVWF ONLAR
+008A   3005           00192     MOVLW 0X05
+008B   00A4           00193     MOVWF BIRLER
+008C   0008           00194     RETURN
+008D                  00195 B16
+008D   1B88           00196     BTFSC PORTD,7
+008E   0008           00197     RETURN
+008F   3001           00198     MOVLW 0X01
+0090   00A5           00199     MOVWF ONLAR
+0091   3006           00200     MOVLW 0X06
+0092   00A4           00201     MOVWF BIRLER
+0093   0008           00202     RETURN
+                      00203 ;----------- 4. SATIR SON --------------
+0094   2???           00204     GOTO KEYPAD
+                      00205     
+                      00206     
+                      00207     
+0095                  00208 GOSTER
+0095   0827           00209     MOVFW BINLER            ;BINLER BASILDI
+0096   0088           00210     MOVWF PORTD
+0097   3001           00211     MOVLW B'00000001'       ;RB0 AKT?F
+0098   0086           00212     MOVWF PORTB
+0099   2???           00213     CALL BEKLE
+                      00214     
+009A   0826           00215     MOVFW YUZLER            ;YUZLER BASILDI
+009B   0088           00216     MOVWF PORTD
+009C   3002           00217     MOVLW B'00000010'       ;RB1 AKT?F
+009D   0086           00218     MOVWF PORTB
+009E   2???           00219     CALL BEKLE
+                      00220     
+009F   0825           00221     MOVFW ONLAR             ;ONLAR BASILDI
+00A0   0088           00222     MOVWF PORTD
+00A1   3004           00223     MOVLW B'00000100'       ;RB2 AKT?F
+00A2   0086           00224     MOVWF PORTB
+00A3   2???           00225     CALL BEKLE
+                      00226     
+00A4   0824           00227     MOVFW BIRLER            ;BIRLER BASILDI
+00A5   0088           00228     MOVWF PORTD
+00A6   3008           00229     MOVLW B'00001000'       ;RB3 AKT?F
+00A7   0086           00230     MOVWF PORTB
+00A8   2???           00231     CALL BEKLE
+00A9   0186           00232     CLRF PORTB
+00AA   0008           00233     RETURN
+                      00234     
+                      00235     
+00AB                  00236 BEKLE
+00AB   3002           00237     MOVLW .2      ;1.5MS
+00AC   00A0           00238     MOVWF SAYAC0
+00AD                  00239 BEKLE1
+MPASM 5.81                NEWASMTEMPLATE.ASM   7-24-2020  10:26:16         PAGE  6
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+00AD   3032           00240     MOVLW .50
+00AE   00A1           00241     MOVWF SAYAC1
+00AF                  00242 BEKLE2
+00AF   3032           00243     MOVLW .50
+00B0   00A2           00244     MOVWF SAYAC2
+00B1                  00245 BEKLEDONGU
+00B1   0BA2           00246     DECFSZ SAYAC2,F
+00B2   2???           00247     GOTO BEKLEDONGU
+00B3   0BA1           00248     DECFSZ SAYAC1,F
+00B4   2???           00249     GOTO BEKLE2
+00B5   0BA0           00250     DECFSZ SAYAC0,F
+00B6   2???           00251     GOTO BEKLE1
+00B7   0008           00252     RETURN
+3F7A                  00253     END
+MPASM 5.81                NEWASMTEMPLATE.ASM   7-24-2020  10:26:16         PAGE  7
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+ACKDT                             00000005
+ACKEN                             00000004
+ACKSTAT                           00000006
+ADCON0                            0000001F
+ADCON1                            0000009F
+ADCS0                             00000006
+ADCS1                             00000007
+ADCS2                             00000006
+ADDEN                             00000003
+ADFM                              00000007
+ADIE                              00000006
+ADIF                              00000006
+ADON                              00000000
+ADRESH                            0000001E
+ADRESL                            0000009E
+B1                                0000001B
+B10                               00000060
+B11                               00000067
+B12                               0000006E
+B13                               00000075
+B14                               0000007F
+B15                               00000086
+B16                               0000008D
+B2                                00000022
+B3                                00000029
+B4                                00000030
+B5                                00000037
+B6                                00000041
+B7                                00000048
+B8                                0000004F
+B9                                00000056
+BANK0                             
+BANK1                             
+BCLIE                             00000003
+BCLIF                             00000003
+BEKLE                             000000AB
+BEKLE1                            000000AD
+BEKLE2                            000000AF
+BEKLEDONGU                        000000B1
+BF                                00000000
+BINKNT                            0000002B
+BINLER                            00000027
+BIRKNT                            00000028
+BIRLER                            00000024
+BRGH                              00000002
+C                                 00000000
+C1INV                             00000004
+C1OUT                             00000006
+C2INV                             00000005
+C2OUT                             00000007
+CCP1CON                           00000017
+CCP1IE                            00000002
+CCP1IF                            00000002
+MPASM 5.81                NEWASMTEMPLATE.ASM   7-24-2020  10:26:16         PAGE  8
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+CCP1M0                            00000000
+CCP1M1                            00000001
+CCP1M2                            00000002
+CCP1M3                            00000003
+CCP1X                             00000005
+CCP1Y                             00000004
+CCP2CON                           0000001D
+CCP2IE                            00000000
+CCP2IF                            00000000
+CCP2M0                            00000000
+CCP2M1                            00000001
+CCP2M2                            00000002
+CCP2M3                            00000003
+CCP2X                             00000005
+CCP2Y                             00000004
+CCPR1                             00000015
+CCPR1H                            00000016
+CCPR1L                            00000015
+CCPR2                             0000001B
+CCPR2H                            0000001C
+CCPR2L                            0000001B
+CHS0                              00000003
+CHS1                              00000004
+CHS2                              00000005
+CIS                               00000003
+CKE                               00000006
+CKP                               00000004
+CM0                               00000000
+CM1                               00000001
+CM2                               00000002
+CMCON                             0000009C
+CMIE                              00000006
+CMIF                              00000006
+CREN                              00000004
+CSRC                              00000007
+CVR0                              00000000
+CVR1                              00000001
+CVR2                              00000002
+CVR3                              00000003
+CVRCON                            0000009D
+CVREN                             00000007
+CVROE                             00000006
+CVRR                              00000005
+D                                 00000005
+DATA_ADDRESS                      00000005
+DC                                00000001
+D_A                               00000005
+D_NOT_A                           00000005
+EEADR                             0000010D
+EEADRH                            0000010F
+EECON1                            0000018C
+EECON2                            0000018D
+EEDATA                            0000010C
+MPASM 5.81                NEWASMTEMPLATE.ASM   7-24-2020  10:26:16         PAGE  9
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+EEDATH                            0000010E
+EEIE                              00000004
+EEIF                              00000004
+EEPGD                             00000007
+F                                 00000001
+FERR                              00000002
+FSR                               00000004
+GCEN                              00000007
+GIE                               00000007
+GO                                00000002
+GOSTER                            00000095
+GO_DONE                           00000002
+GO_NOT_DONE                       00000002
+I2C_DATA                          00000005
+I2C_READ                          00000002
+I2C_START                         00000003
+I2C_STOP                          00000004
+IBF                               00000007
+IBOV                              00000005
+INDF                              00000000
+INTCON                            0000000B
+INTE                              00000004
+INTEDG                            00000006
+INTF                              00000001
+IRP                               00000007
+KAYDIR                            00000023
+KEYPAD                            00000018
+LOOP                              00000015
+MAIN                              00000005
+NOT_A                             00000005
+NOT_ADDRESS                       00000005
+NOT_BO                            00000000
+NOT_BOR                           00000000
+NOT_DONE                          00000002
+NOT_PD                            00000003
+NOT_POR                           00000001
+NOT_RBPU                          00000007
+NOT_RC8                           00000006
+NOT_T1SYNC                        00000002
+NOT_TO                            00000004
+NOT_TX8                           00000006
+NOT_W                             00000002
+NOT_WRITE                         00000002
+OBF                               00000006
+OERR                              00000001
+ONKNT                             00000029
+ONLAR                             00000025
+OPTION_REG                        00000081
+P                                 00000004
+PCFG0                             00000000
+PCFG1                             00000001
+PCFG2                             00000002
+PCFG3                             00000003
+MPASM 5.81                NEWASMTEMPLATE.ASM   7-24-2020  10:26:16         PAGE 10
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+PCL                               00000002
+PCLATH                            0000000A
+PCON                              0000008E
+PEIE                              00000006
+PEN                               00000002
+PIE1                              0000008C
+PIE2                              0000008D
+PIR1                              0000000C
+PIR2                              0000000D
+PORTA                             00000005
+PORTB                             00000006
+PORTC                             00000007
+PORTD                             00000008
+PORTE                             00000009
+PR2                               00000092
+PS0                               00000000
+PS1                               00000001
+PS2                               00000002
+PSA                               00000003
+PSPIE                             00000007
+PSPIF                             00000007
+PSPMODE                           00000004
+R                                 00000002
+RA0                               00000000
+RA1                               00000001
+RA2                               00000002
+RA3                               00000003
+RA4                               00000004
+RA5                               00000005
+RB0                               00000000
+RB1                               00000001
+RB2                               00000002
+RB3                               00000003
+RB4                               00000004
+RB5                               00000005
+RB6                               00000006
+RB7                               00000007
+RBIE                              00000003
+RBIF                              00000000
+RC0                               00000000
+RC1                               00000001
+RC2                               00000002
+RC3                               00000003
+RC4                               00000004
+RC5                               00000005
+RC6                               00000006
+RC7                               00000007
+RC8_9                             00000006
+RC9                               00000006
+RCD8                              00000000
+RCEN                              00000003
+RCIE                              00000005
+RCIF                              00000005
+MPASM 5.81                NEWASMTEMPLATE.ASM   7-24-2020  10:26:16         PAGE 11
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+RCREG                             0000001A
+RCSTA                             00000018
+RD                                00000000
+RD0                               00000000
+RD1                               00000001
+RD2                               00000002
+RD3                               00000003
+RD4                               00000004
+RD5                               00000005
+RD6                               00000006
+RD7                               00000007
+RE0                               00000000
+RE1                               00000001
+RE2                               00000002
+READ_WRITE                        00000002
+RP0                               00000005
+RP1                               00000006
+RSEN                              00000001
+RX9                               00000006
+RX9D                              00000000
+R_NOT_W                           00000002
+R_W                               00000002
+S                                 00000003
+SAYAC0                            00000020
+SAYAC1                            00000021
+SAYAC2                            00000022
+SEN                               00000000
+SMP                               00000007
+SPBRG                             00000099
+SPEN                              00000007
+SREN                              00000005
+SSPADD                            00000093
+SSPBUF                            00000013
+SSPCON                            00000014
+SSPCON2                           00000091
+SSPEN                             00000005
+SSPIE                             00000003
+SSPIF                             00000003
+SSPM0                             00000000
+SSPM1                             00000001
+SSPM2                             00000002
+SSPM3                             00000003
+SSPOV                             00000006
+SSPSTAT                           00000094
+STATUS                            00000003
+SYNC                              00000004
+T0CS                              00000005
+T0IE                              00000005
+T0IF                              00000002
+T0SE                              00000004
+T1CKPS0                           00000004
+T1CKPS1                           00000005
+T1CON                             00000010
+MPASM 5.81                NEWASMTEMPLATE.ASM   7-24-2020  10:26:16         PAGE 12
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+T1INSYNC                          00000002
+T1OSCEN                           00000003
+T1SYNC                            00000002
+T2CKPS0                           00000000
+T2CKPS1                           00000001
+T2CON                             00000012
+TMR0                              00000001
+TMR0IE                            00000005
+TMR0IF                            00000002
+TMR1                              0000000E
+TMR1CS                            00000001
+TMR1H                             0000000F
+TMR1IE                            00000000
+TMR1IF                            00000000
+TMR1L                             0000000E
+TMR1ON                            00000000
+TMR2                              00000011
+TMR2IE                            00000001
+TMR2IF                            00000001
+TMR2ON                            00000002
+TOUTPS0                           00000003
+TOUTPS1                           00000004
+TOUTPS2                           00000005
+TOUTPS3                           00000006
+TRISA                             00000085
+TRISA0                            00000000
+TRISA1                            00000001
+TRISA2                            00000002
+TRISA3                            00000003
+TRISA4                            00000004
+TRISA5                            00000005
+TRISB                             00000086
+TRISB0                            00000000
+TRISB1                            00000001
+TRISB2                            00000002
+TRISB3                            00000003
+TRISB4                            00000004
+TRISB5                            00000005
+TRISB6                            00000006
+TRISB7                            00000007
+TRISC                             00000087
+TRISC0                            00000000
+TRISC1                            00000001
+TRISC2                            00000002
+TRISC3                            00000003
+TRISC4                            00000004
+TRISC5                            00000005
+TRISC6                            00000006
+TRISC7                            00000007
+TRISD                             00000088
+TRISD0                            00000000
+TRISD1                            00000001
+TRISD2                            00000002
+MPASM 5.81                NEWASMTEMPLATE.ASM   7-24-2020  10:26:16         PAGE 13
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+TRISD3                            00000003
+TRISD4                            00000004
+TRISD5                            00000005
+TRISD6                            00000006
+TRISD7                            00000007
+TRISE                             00000089
+TRISE0                            00000000
+TRISE1                            00000001
+TRISE2                            00000002
+TRMT                              00000001
+TX8_9                             00000006
+TX9                               00000006
+TX9D                              00000000
+TXD8                              00000000
+TXEN                              00000005
+TXIE                              00000004
+TXIF                              00000004
+TXREG                             00000019
+TXSTA                             00000098
+UA                                00000001
+W                                 00000000
+WCOL                              00000007
+WR                                00000001
+WREN                              00000002
+WRERR                             00000003
+YUZKNT                            0000002A
+YUZLER                            00000026
+Z                                 00000002
+_BODEN_OFF                        00003FBF
+_BODEN_ON                         00003FFF
+_BOREN_OFF                        00003FBF
+_BOREN_ON                         00003FFF
+_CONFIG                           00002007
+_CPD_OFF                          00003FFF
+_CPD_ON                           00003EFF
+_CP_ALL                           00001FFF
+_CP_OFF                           00003FFF
+_CP_ON                            00001FFF
+_DEBUG_OFF                        00003FFF
+_DEBUG_ON                         000037FF
+_DEVID1                           00002006
+_FOSC_EXTRC                       00003FFF
+_FOSC_HS                          00003FFE
+_FOSC_LP                          00003FFC
+_FOSC_XT                          00003FFD
+_HS_OSC                           00003FFE
+_IDLOC0                           00002000
+_IDLOC1                           00002001
+_IDLOC2                           00002002
+_IDLOC3                           00002003
+_LP_OSC                           00003FFC
+_LVP_OFF                          00003F7F
+_LVP_ON                           00003FFF
+MPASM 5.81                NEWASMTEMPLATE.ASM   7-24-2020  10:26:16         PAGE 14
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+_PWRTE_OFF                        00003FFF
+_PWRTE_ON                         00003FF7
+_RC_OSC                           00003FFF
+_WDTE_OFF                         00003FFB
+_WDTE_ON                          00003FFF
+_WDT_OFF                          00003FFB
+_WDT_ON                           00003FFF
+_WRT_1FOURTH                      00003BFF
+_WRT_256                          00003DFF
+_WRT_HALF                         000039FF
+_WRT_OFF                          00003FFF
+_XT_OSC                           00003FFD
+__16F877A                         00000001
+
+Errors   :     0
+Warnings :    12 reported,     0 suppressed
+Messages :     2 reported,     0 suppressed
+
+

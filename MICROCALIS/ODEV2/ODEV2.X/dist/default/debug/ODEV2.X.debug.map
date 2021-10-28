@@ -1,0 +1,48 @@
+MPLINK 5.09, LINKER
+Linker Map File - Created Tue Oct 30 00:17:11 2018
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000002
+                   .cinit    romdata   0x000001    program   0x000004
+                   .org_1       code   0x000004    program   0x00009a
+.config_2007_BUILD/DEFAULT/DEBUG/ODEV2.O       code   0x002007    program   0x000002
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000002      
+                            0x000004    0x000050      
+                            0x002007    0x002007      
+            81 out of 8454 program addresses used, program memory utilization is 0%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+              BUTONHIZLAN   0x000039    program     static C:\Users\black\Desktop\ODEV2\ODEV2.X\ODEV2.asm
+             BUTONYAVASLA   0x00003c    program     static C:\Users\black\Desktop\ODEV2\ODEV2.X\ODEV2.asm
+                   HIZLAN   0x00003f    program     static C:\Users\black\Desktop\ODEV2\ODEV2.X\ODEV2.asm
+                    KESME   0x000027    program     static C:\Users\black\Desktop\ODEV2\ODEV2.X\ODEV2.asm
+                     MAIN   0x000005    program     static C:\Users\black\Desktop\ODEV2\ODEV2.X\ODEV2.asm
+                      SAY   0x000033    program     static C:\Users\black\Desktop\ODEV2\ODEV2.X\ODEV2.asm
+                  YAVASLA   0x000048    program     static C:\Users\black\Desktop\ODEV2\ODEV2.X\ODEV2.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                     MAIN   0x000005    program     static C:\Users\black\Desktop\ODEV2\ODEV2.X\ODEV2.asm
+                    KESME   0x000027    program     static C:\Users\black\Desktop\ODEV2\ODEV2.X\ODEV2.asm
+                      SAY   0x000033    program     static C:\Users\black\Desktop\ODEV2\ODEV2.X\ODEV2.asm
+              BUTONHIZLAN   0x000039    program     static C:\Users\black\Desktop\ODEV2\ODEV2.X\ODEV2.asm
+             BUTONYAVASLA   0x00003c    program     static C:\Users\black\Desktop\ODEV2\ODEV2.X\ODEV2.asm
+                   HIZLAN   0x00003f    program     static C:\Users\black\Desktop\ODEV2\ODEV2.X\ODEV2.asm
+                  YAVASLA   0x000048    program     static C:\Users\black\Desktop\ODEV2\ODEV2.X\ODEV2.asm
+
+

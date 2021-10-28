@@ -1,0 +1,68 @@
+MPLINK 5.09, LINKER
+Linker Map File - Created Tue Dec 04 00:15:39 2018
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x0000f0
+                   .cinit    romdata   0x000078    program   0x000004
+.config_2007_BUILD/DEFAULT/PRODUCTION/NEWASMT       code   0x002007    program   0x000002
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000079      
+                            0x002007    0x002007      
+            123 out of 8454 program addresses used, program memory utilization is 1%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                   ARTTIR   0x00004d    program     static C:\Users\black\Desktop\MICROCALIS\DENEMELCD\DENEMELCD.X\newAsmTemplate.asm
+                  BEKLEME   0x00006f    program     static C:\Users\black\Desktop\MICROCALIS\DENEMELCD\DENEMELCD.X\newAsmTemplate.asm
+                 BEKLEME2   0x000071    program     static C:\Users\black\Desktop\MICROCALIS\DENEMELCD\DENEMELCD.X\newAsmTemplate.asm
+             BEKLEMEDONGU   0x000073    program     static C:\Users\black\Desktop\MICROCALIS\DENEMELCD\DENEMELCD.X\newAsmTemplate.asm
+                      BOS   0x000050    program     static C:\Users\black\Desktop\MICROCALIS\DENEMELCD\DENEMELCD.X\newAsmTemplate.asm
+                 DEGISTIR   0x00002c    program     static C:\Users\black\Desktop\MICROCALIS\DENEMELCD\DENEMELCD.X\newAsmTemplate.asm
+                    DONGU   0x00005f    program     static C:\Users\black\Desktop\MICROCALIS\DENEMELCD\DENEMELCD.X\newAsmTemplate.asm
+             KOMUT_GONDER   0x000032    program     static C:\Users\black\Desktop\MICROCALIS\DENEMELCD\DENEMELCD.X\newAsmTemplate.asm
+                KOMUT_YAZ   0x000021    program     static C:\Users\black\Desktop\MICROCALIS\DENEMELCD\DENEMELCD.X\newAsmTemplate.asm
+                     MAIN   0x000000    program     static C:\Users\black\Desktop\MICROCALIS\DENEMELCD\DENEMELCD.X\newAsmTemplate.asm
+                      SAG   0x000048    program     static C:\Users\black\Desktop\MICROCALIS\DENEMELCD\DENEMELCD.X\newAsmTemplate.asm
+                   SAYIAL   0x000029    program     static C:\Users\black\Desktop\MICROCALIS\DENEMELCD\DENEMELCD.X\newAsmTemplate.asm
+                  TEMIZLE   0x000018    program     static C:\Users\black\Desktop\MICROCALIS\DENEMELCD\DENEMELCD.X\newAsmTemplate.asm
+                     VER1   0x00003d    program     static C:\Users\black\Desktop\MICROCALIS\DENEMELCD\DENEMELCD.X\newAsmTemplate.asm
+                     VER2   0x000044    program     static C:\Users\black\Desktop\MICROCALIS\DENEMELCD\DENEMELCD.X\newAsmTemplate.asm
+              VERI_GONDER   0x000066    program     static C:\Users\black\Desktop\MICROCALIS\DENEMELCD\DENEMELCD.X\newAsmTemplate.asm
+                 VERI_YAZ   0x000060    program     static C:\Users\black\Desktop\MICROCALIS\DENEMELCD\DENEMELCD.X\newAsmTemplate.asm
+                    WRITE   0x000055    program     static C:\Users\black\Desktop\MICROCALIS\DENEMELCD\DENEMELCD.X\newAsmTemplate.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                     MAIN   0x000000    program     static C:\Users\black\Desktop\MICROCALIS\DENEMELCD\DENEMELCD.X\newAsmTemplate.asm
+                  TEMIZLE   0x000018    program     static C:\Users\black\Desktop\MICROCALIS\DENEMELCD\DENEMELCD.X\newAsmTemplate.asm
+                KOMUT_YAZ   0x000021    program     static C:\Users\black\Desktop\MICROCALIS\DENEMELCD\DENEMELCD.X\newAsmTemplate.asm
+                   SAYIAL   0x000029    program     static C:\Users\black\Desktop\MICROCALIS\DENEMELCD\DENEMELCD.X\newAsmTemplate.asm
+                 DEGISTIR   0x00002c    program     static C:\Users\black\Desktop\MICROCALIS\DENEMELCD\DENEMELCD.X\newAsmTemplate.asm
+             KOMUT_GONDER   0x000032    program     static C:\Users\black\Desktop\MICROCALIS\DENEMELCD\DENEMELCD.X\newAsmTemplate.asm
+                     VER1   0x00003d    program     static C:\Users\black\Desktop\MICROCALIS\DENEMELCD\DENEMELCD.X\newAsmTemplate.asm
+                     VER2   0x000044    program     static C:\Users\black\Desktop\MICROCALIS\DENEMELCD\DENEMELCD.X\newAsmTemplate.asm
+                      SAG   0x000048    program     static C:\Users\black\Desktop\MICROCALIS\DENEMELCD\DENEMELCD.X\newAsmTemplate.asm
+                   ARTTIR   0x00004d    program     static C:\Users\black\Desktop\MICROCALIS\DENEMELCD\DENEMELCD.X\newAsmTemplate.asm
+                      BOS   0x000050    program     static C:\Users\black\Desktop\MICROCALIS\DENEMELCD\DENEMELCD.X\newAsmTemplate.asm
+                    WRITE   0x000055    program     static C:\Users\black\Desktop\MICROCALIS\DENEMELCD\DENEMELCD.X\newAsmTemplate.asm
+                    DONGU   0x00005f    program     static C:\Users\black\Desktop\MICROCALIS\DENEMELCD\DENEMELCD.X\newAsmTemplate.asm
+                 VERI_YAZ   0x000060    program     static C:\Users\black\Desktop\MICROCALIS\DENEMELCD\DENEMELCD.X\newAsmTemplate.asm
+              VERI_GONDER   0x000066    program     static C:\Users\black\Desktop\MICROCALIS\DENEMELCD\DENEMELCD.X\newAsmTemplate.asm
+                  BEKLEME   0x00006f    program     static C:\Users\black\Desktop\MICROCALIS\DENEMELCD\DENEMELCD.X\newAsmTemplate.asm
+                 BEKLEME2   0x000071    program     static C:\Users\black\Desktop\MICROCALIS\DENEMELCD\DENEMELCD.X\newAsmTemplate.asm
+             BEKLEMEDONGU   0x000073    program     static C:\Users\black\Desktop\MICROCALIS\DENEMELCD\DENEMELCD.X\newAsmTemplate.asm
+
+

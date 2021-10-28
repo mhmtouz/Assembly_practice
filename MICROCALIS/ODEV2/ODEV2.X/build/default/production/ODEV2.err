@@ -1,0 +1,10 @@
+Warning[207] C:\USERS\BLACK\DESKTOP\ODEV2\ODEV2.X\ODEV2.ASM 4 : Found label after column 1. (SAYAC)
+Warning[207] C:\USERS\BLACK\DESKTOP\ODEV2\ODEV2.X\ODEV2.ASM 5 : Found label after column 1. (SAYACYEDEK)
+Warning[207] C:\USERS\BLACK\DESKTOP\ODEV2\ODEV2.X\ODEV2.ASM 6 : Found label after column 1. (ALTSINIR)
+Warning[207] C:\USERS\BLACK\DESKTOP\ODEV2\ODEV2.X\ODEV2.ASM 7 : Found label after column 1. (USTSINIR)
+Message[302] C:\USERS\BLACK\DESKTOP\ODEV2\ODEV2.X\ODEV2.ASM 14 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\BLACK\DESKTOP\ODEV2\ODEV2.X\ODEV2.ASM 16 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\BLACK\DESKTOP\ODEV2\ODEV2.X\ODEV2.ASM 35 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[305] C:\USERS\BLACK\DESKTOP\ODEV2\ODEV2.X\ODEV2.ASM 54 : Using default destination of 1 (file).
+Message[305] C:\USERS\BLACK\DESKTOP\ODEV2\ODEV2.X\ODEV2.ASM 72 : Using default destination of 1 (file).
+Message[305] C:\USERS\BLACK\DESKTOP\ODEV2\ODEV2.X\ODEV2.ASM 82 : Using default destination of 1 (file).

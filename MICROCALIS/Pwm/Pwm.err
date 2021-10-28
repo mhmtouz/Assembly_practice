@@ -1,0 +1,9 @@
+Warning[205] C:\USERS\ERDOG\ONEDRIVE\MASAüSTü\PWM\PWM.ASM 2 : Found directive in column 1. (ORG)
+Warning[203] C:\USERS\ERDOG\ONEDRIVE\MASAüSTü\PWM\PWM.ASM 8 : Found opcode in column 1. (GOTO)
+Message[302] C:\USERS\ERDOG\ONEDRIVE\MASAüSTü\PWM\PWM.ASM 15 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\ERDOG\ONEDRIVE\MASAüSTü\PWM\PWM.ASM 16 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\ERDOG\ONEDRIVE\MASAüSTü\PWM\PWM.ASM 17 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\ERDOG\ONEDRIVE\MASAüSTü\PWM\PWM.ASM 18 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Warning[203] C:\USERS\ERDOG\ONEDRIVE\MASAüSTü\PWM\PWM.ASM 27 : Found opcode in column 1. (RETURN)
+Warning[203] C:\USERS\ERDOG\ONEDRIVE\MASAüSTü\PWM\PWM.ASM 35 : Found opcode in column 1. (GOTO)
+Warning[205] C:\USERS\ERDOG\ONEDRIVE\MASAüSTü\PWM\PWM.ASM 50 : Found directive in column 1. (END)

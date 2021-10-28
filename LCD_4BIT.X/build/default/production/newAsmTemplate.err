@@ -1,0 +1,7 @@
+Warning[207] C:\USERS\MU\DESKTOP\ASSEMBLY\LCD.X\NEWASMTEMPLATE.ASM 4 : Found label after column 1. (TEMP)
+Warning[207] C:\USERS\MU\DESKTOP\ASSEMBLY\LCD.X\NEWASMTEMPLATE.ASM 5 : Found label after column 1. (SB1)
+Warning[207] C:\USERS\MU\DESKTOP\ASSEMBLY\LCD.X\NEWASMTEMPLATE.ASM 6 : Found label after column 1. (SB2)
+Message[302] C:\USERS\MU\DESKTOP\ASSEMBLY\LCD.X\NEWASMTEMPLATE.ASM 10 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\MU\DESKTOP\ASSEMBLY\LCD.X\NEWASMTEMPLATE.ASM 12 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[305] C:\USERS\MU\DESKTOP\ASSEMBLY\LCD.X\NEWASMTEMPLATE.ASM 109 : Using default destination of 1 (file).
+Message[305] C:\USERS\MU\DESKTOP\ASSEMBLY\LCD.X\NEWASMTEMPLATE.ASM 111 : Using default destination of 1 (file).

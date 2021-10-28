@@ -1,0 +1,9 @@
+Warning[207] C:\USERS\MU\DESKTOP\ASSEMBLY\7SEG_TIMER1.X\NEWASMTEMPLATE.ASM 4 : Found label after column 1. (SAYAC)
+Warning[207] C:\USERS\MU\DESKTOP\ASSEMBLY\7SEG_TIMER1.X\NEWASMTEMPLATE.ASM 5 : Found label after column 1. (SAY)
+Warning[207] C:\USERS\MU\DESKTOP\ASSEMBLY\7SEG_TIMER1.X\NEWASMTEMPLATE.ASM 6 : Found label after column 1. (SAY10)
+Warning[207] C:\USERS\MU\DESKTOP\ASSEMBLY\7SEG_TIMER1.X\NEWASMTEMPLATE.ASM 7 : Found label after column 1. (BEKLE)
+Warning[207] C:\USERS\MU\DESKTOP\ASSEMBLY\7SEG_TIMER1.X\NEWASMTEMPLATE.ASM 8 : Found label after column 1. (BEKLE2)
+Message[302] C:\USERS\MU\DESKTOP\ASSEMBLY\7SEG_TIMER1.X\NEWASMTEMPLATE.ASM 15 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\MU\DESKTOP\ASSEMBLY\7SEG_TIMER1.X\NEWASMTEMPLATE.ASM 16 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\MU\DESKTOP\ASSEMBLY\7SEG_TIMER1.X\NEWASMTEMPLATE.ASM 34 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[305] C:\USERS\MU\DESKTOP\ASSEMBLY\7SEG_TIMER1.X\NEWASMTEMPLATE.ASM 71 : Using default destination of 1 (file).

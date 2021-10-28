@@ -1,0 +1,40 @@
+MPLINK 4.49, Linker
+Linker Map File - Created Thu Oct 18 15:45:07 2018
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000046
+                   .cinit    romdata   0x000023    program   0x000004
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000024      
+            37 out of 8454 program addresses used, program memory utilization is 0%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                    ARTIM   0x000019    program     static C:\Users\erdog\OneDrive\Masaüstü\Pwm\Pwm.asm
+                    AZALT   0x00001e    program     static C:\Users\erdog\OneDrive\Masaüstü\Pwm\Pwm.asm
+            BUTON_KONTROL   0x000012    program     static C:\Users\erdog\OneDrive\Masaüstü\Pwm\Pwm.asm
+                     MAIN   0x000001    program     static C:\Users\erdog\OneDrive\Masaüstü\Pwm\Pwm.asm
+            PORT_AYARLARI   0x000003    program     static C:\Users\erdog\OneDrive\Masaüstü\Pwm\Pwm.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                     MAIN   0x000001    program     static C:\Users\erdog\OneDrive\Masaüstü\Pwm\Pwm.asm
+            PORT_AYARLARI   0x000003    program     static C:\Users\erdog\OneDrive\Masaüstü\Pwm\Pwm.asm
+            BUTON_KONTROL   0x000012    program     static C:\Users\erdog\OneDrive\Masaüstü\Pwm\Pwm.asm
+                    ARTIM   0x000019    program     static C:\Users\erdog\OneDrive\Masaüstü\Pwm\Pwm.asm
+                    AZALT   0x00001e    program     static C:\Users\erdog\OneDrive\Masaüstü\Pwm\Pwm.asm
+
+

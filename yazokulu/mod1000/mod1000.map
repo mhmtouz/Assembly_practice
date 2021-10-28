@@ -1,0 +1,56 @@
+MPLINK 4.49, Linker
+Linker Map File - Created Tue Jul 09 23:01:01 2019
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000000
+                   .org_1       code   0x000000    program   0x000002
+                   .org_2       code   0x000004    program   0x00008c
+   .config_2007_MOD1000.O       code   0x002007    program   0x000002
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000000      
+                            0x000004    0x000049      
+                            0x002007    0x002007      
+            72 out of 8454 program addresses used, program memory utilization is 0%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                   BEKLE0   0x00003d    program     static C:\yazokulu\mod1000\mod1000.asm
+                   BEKLE1   0x00003f    program     static C:\yazokulu\mod1000\mod1000.asm
+                   BEKLE2   0x000041    program     static C:\yazokulu\mod1000\mod1000.asm
+                   BEKLE3   0x000043    program     static C:\yazokulu\mod1000\mod1000.asm
+                   GOSTER   0x00002e    program     static C:\yazokulu\mod1000\mod1000.asm
+                    LOOP0   0x000014    program     static C:\yazokulu\mod1000\mod1000.asm
+                    LOOP1   0x000016    program     static C:\yazokulu\mod1000\mod1000.asm
+                    LOOP2   0x000018    program     static C:\yazokulu\mod1000\mod1000.asm
+                    LOOP3   0x00001a    program     static C:\yazokulu\mod1000\mod1000.asm
+                    LOOP4   0x00001c    program     static C:\yazokulu\mod1000\mod1000.asm
+                  PROGRAM   0x000005    program     static C:\yazokulu\mod1000\mod1000.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                  PROGRAM   0x000005    program     static C:\yazokulu\mod1000\mod1000.asm
+                    LOOP0   0x000014    program     static C:\yazokulu\mod1000\mod1000.asm
+                    LOOP1   0x000016    program     static C:\yazokulu\mod1000\mod1000.asm
+                    LOOP2   0x000018    program     static C:\yazokulu\mod1000\mod1000.asm
+                    LOOP3   0x00001a    program     static C:\yazokulu\mod1000\mod1000.asm
+                    LOOP4   0x00001c    program     static C:\yazokulu\mod1000\mod1000.asm
+                   GOSTER   0x00002e    program     static C:\yazokulu\mod1000\mod1000.asm
+                   BEKLE0   0x00003d    program     static C:\yazokulu\mod1000\mod1000.asm
+                   BEKLE1   0x00003f    program     static C:\yazokulu\mod1000\mod1000.asm
+                   BEKLE2   0x000041    program     static C:\yazokulu\mod1000\mod1000.asm
+                   BEKLE3   0x000043    program     static C:\yazokulu\mod1000\mod1000.asm
+
+

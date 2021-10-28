@@ -1,0 +1,11 @@
+Warning[207] C:\USERS\BLACK\DESKTOP\ODEV3\ODEV3.X\ODEV3.ASM 4 : Found label after column 1. (SAYAC)
+Warning[207] C:\USERS\BLACK\DESKTOP\ODEV3\ODEV3.X\ODEV3.ASM 5 : Found label after column 1. (SAYAC_BIRLER)
+Warning[207] C:\USERS\BLACK\DESKTOP\ODEV3\ODEV3.X\ODEV3.ASM 6 : Found label after column 1. (SAYAC_ONLAR)
+Warning[207] C:\USERS\BLACK\DESKTOP\ODEV3\ODEV3.X\ODEV3.ASM 7 : Found label after column 1. (BEKLE)
+Warning[207] C:\USERS\BLACK\DESKTOP\ODEV3\ODEV3.X\ODEV3.ASM 8 : Found label after column 1. (BEKLE2)
+Message[305] C:\USERS\BLACK\DESKTOP\ODEV3\ODEV3.X\ODEV3.ASM 24 : Using default destination of 1 (file).
+Message[302] C:\USERS\BLACK\DESKTOP\ODEV3\ODEV3.X\ODEV3.ASM 28 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\BLACK\DESKTOP\ODEV3\ODEV3.X\ODEV3.ASM 30 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\BLACK\DESKTOP\ODEV3\ODEV3.X\ODEV3.ASM 32 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\BLACK\DESKTOP\ODEV3\ODEV3.X\ODEV3.ASM 49 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[305] C:\USERS\BLACK\DESKTOP\ODEV3\ODEV3.X\ODEV3.ASM 67 : Using default destination of 1 (file).

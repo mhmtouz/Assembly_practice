@@ -1,0 +1,56 @@
+MPLINK 5.09, LINKER
+Linker Map File - Created Tue Jul 28 08:17:03 2020
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000002
+                   .cinit    romdata   0x000001    program   0x000004
+                   .org_1       code   0x000004    program   0x0000ba
+.config_2007_BUILD/DEFAULT/PRODUCTION/STEPMOT       code   0x002007    program   0x000002
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000002      
+                            0x000004    0x000060      
+                            0x002007    0x002007      
+            97 out of 8454 program addresses used, program memory utilization is 1%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                    BEKLE   0x000054    program     static C:\Users\mehme\Desktop\Assembly\karabukYaz\StepMotor.X\StepMotor.asm
+                   BEKLE1   0x000056    program     static C:\Users\mehme\Desktop\Assembly\karabukYaz\StepMotor.X\StepMotor.asm
+                   BEKLE2   0x000058    program     static C:\Users\mehme\Desktop\Assembly\karabukYaz\StepMotor.X\StepMotor.asm
+               BEKLEDONGU   0x00005a    program     static C:\Users\mehme\Desktop\Assembly\karabukYaz\StepMotor.X\StepMotor.asm
+                BUTONTARA   0x00001c    program     static C:\Users\mehme\Desktop\Assembly\karabukYaz\StepMotor.X\StepMotor.asm
+                   HIZLAN   0x00004e    program     static C:\Users\mehme\Desktop\Assembly\karabukYaz\StepMotor.X\StepMotor.asm
+                     LOOP   0x00001a    program     static C:\Users\mehme\Desktop\Assembly\karabukYaz\StepMotor.X\StepMotor.asm
+                     MAIN   0x000005    program     static C:\Users\mehme\Desktop\Assembly\karabukYaz\StepMotor.X\StepMotor.asm
+                     SAGA   0x000028    program     static C:\Users\mehme\Desktop\Assembly\karabukYaz\StepMotor.X\StepMotor.asm
+                     SOLA   0x00003b    program     static C:\Users\mehme\Desktop\Assembly\karabukYaz\StepMotor.X\StepMotor.asm
+                  YAVASLA   0x000051    program     static C:\Users\mehme\Desktop\Assembly\karabukYaz\StepMotor.X\StepMotor.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                     MAIN   0x000005    program     static C:\Users\mehme\Desktop\Assembly\karabukYaz\StepMotor.X\StepMotor.asm
+                     LOOP   0x00001a    program     static C:\Users\mehme\Desktop\Assembly\karabukYaz\StepMotor.X\StepMotor.asm
+                BUTONTARA   0x00001c    program     static C:\Users\mehme\Desktop\Assembly\karabukYaz\StepMotor.X\StepMotor.asm
+                     SAGA   0x000028    program     static C:\Users\mehme\Desktop\Assembly\karabukYaz\StepMotor.X\StepMotor.asm
+                     SOLA   0x00003b    program     static C:\Users\mehme\Desktop\Assembly\karabukYaz\StepMotor.X\StepMotor.asm
+                   HIZLAN   0x00004e    program     static C:\Users\mehme\Desktop\Assembly\karabukYaz\StepMotor.X\StepMotor.asm
+                  YAVASLA   0x000051    program     static C:\Users\mehme\Desktop\Assembly\karabukYaz\StepMotor.X\StepMotor.asm
+                    BEKLE   0x000054    program     static C:\Users\mehme\Desktop\Assembly\karabukYaz\StepMotor.X\StepMotor.asm
+                   BEKLE1   0x000056    program     static C:\Users\mehme\Desktop\Assembly\karabukYaz\StepMotor.X\StepMotor.asm
+                   BEKLE2   0x000058    program     static C:\Users\mehme\Desktop\Assembly\karabukYaz\StepMotor.X\StepMotor.asm
+               BEKLEDONGU   0x00005a    program     static C:\Users\mehme\Desktop\Assembly\karabukYaz\StepMotor.X\StepMotor.asm
+
+

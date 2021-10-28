@@ -1,0 +1,4 @@
+Warning[207] C:\USERS\BLACK\DESKTOP\MICROCALIS\DENEME3\MOD.X\NEWASMTEMPLATE.ASM 4 : Found label after column 1. (SAYI1)
+Warning[207] C:\USERS\BLACK\DESKTOP\MICROCALIS\DENEME3\MOD.X\NEWASMTEMPLATE.ASM 5 : Found label after column 1. (SAYI2)
+Message[302] C:\USERS\BLACK\DESKTOP\MICROCALIS\DENEME3\MOD.X\NEWASMTEMPLATE.ASM 10 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\BLACK\DESKTOP\MICROCALIS\DENEME3\MOD.X\NEWASMTEMPLATE.ASM 11 : Register in operand not in bank 0.  Ensure that bank bits are correct.

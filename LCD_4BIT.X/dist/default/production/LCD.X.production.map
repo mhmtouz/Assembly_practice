@@ -1,0 +1,54 @@
+MPLINK 5.09, LINKER
+Linker Map File - Created Thu Jan 23 22:26:52 2020
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x0000be
+                   .cinit    romdata   0x00005f    program   0x000004
+.config_2007_BUILD/DEFAULT/PRODUCTION/NEWASMT       code   0x002007    program   0x000002
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000060      
+                            0x002007    0x002007      
+            98 out of 8454 program addresses used, program memory utilization is 1%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                    BEKLE   0x000056    program     static C:\Users\MU\Desktop\Assembly\LCD.X\newAsmTemplate.asm
+                   BEKLE2   0x000058    program     static C:\Users\MU\Desktop\Assembly\LCD.X\newAsmTemplate.asm
+                   BEKLED   0x00005a    program     static C:\Users\MU\Desktop\Assembly\LCD.X\newAsmTemplate.asm
+                 KARAKTER   0x000015    program     static C:\Users\MU\Desktop\Assembly\LCD.X\newAsmTemplate.asm
+              KOMUTGONDER   0x00003e    program     static C:\Users\MU\Desktop\Assembly\LCD.X\newAsmTemplate.asm
+                 KOMUTYAZ   0x000038    program     static C:\Users\MU\Desktop\Assembly\LCD.X\newAsmTemplate.asm
+                     MAIN   0x000000    program     static C:\Users\MU\Desktop\Assembly\LCD.X\newAsmTemplate.asm
+                      SON   0x00005f    program     static C:\Users\MU\Desktop\Assembly\LCD.X\newAsmTemplate.asm
+                  TEMIZLE   0x00000e    program     static C:\Users\MU\Desktop\Assembly\LCD.X\newAsmTemplate.asm
+               VERIGONDER   0x00004d    program     static C:\Users\MU\Desktop\Assembly\LCD.X\newAsmTemplate.asm
+                  VERIYAZ   0x000047    program     static C:\Users\MU\Desktop\Assembly\LCD.X\newAsmTemplate.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                     MAIN   0x000000    program     static C:\Users\MU\Desktop\Assembly\LCD.X\newAsmTemplate.asm
+                  TEMIZLE   0x00000e    program     static C:\Users\MU\Desktop\Assembly\LCD.X\newAsmTemplate.asm
+                 KARAKTER   0x000015    program     static C:\Users\MU\Desktop\Assembly\LCD.X\newAsmTemplate.asm
+                 KOMUTYAZ   0x000038    program     static C:\Users\MU\Desktop\Assembly\LCD.X\newAsmTemplate.asm
+              KOMUTGONDER   0x00003e    program     static C:\Users\MU\Desktop\Assembly\LCD.X\newAsmTemplate.asm
+                  VERIYAZ   0x000047    program     static C:\Users\MU\Desktop\Assembly\LCD.X\newAsmTemplate.asm
+               VERIGONDER   0x00004d    program     static C:\Users\MU\Desktop\Assembly\LCD.X\newAsmTemplate.asm
+                    BEKLE   0x000056    program     static C:\Users\MU\Desktop\Assembly\LCD.X\newAsmTemplate.asm
+                   BEKLE2   0x000058    program     static C:\Users\MU\Desktop\Assembly\LCD.X\newAsmTemplate.asm
+                   BEKLED   0x00005a    program     static C:\Users\MU\Desktop\Assembly\LCD.X\newAsmTemplate.asm
+                      SON   0x00005f    program     static C:\Users\MU\Desktop\Assembly\LCD.X\newAsmTemplate.asm
+
+

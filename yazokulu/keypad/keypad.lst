@@ -1,0 +1,935 @@
+MPASM  5.51                        KEYPAD.ASM   7-10-2019  0:18:12         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+Warning[205]: Found directive in column 1. (LIST)
+                      00001 LIST P=16F877A
+                      00002 #INCLUDE <P16F877A.INC>
+                      00001         LIST
+                      00002 
+                      00003 ;==========================================================================
+                      00004 ;  MPASM PIC16F877A processor include
+                      00005 ; 
+                      00006 ;  (c) Copyright 1999-2013 Microchip Technology, All rights reserved
+                      00007 ;==========================================================================
+                      00008 
+                      00566         LIST
+Warning[205]: Found directive in column 1. (__CONFIG)
+2007   3FFA           00003 __CONFIG _CP_OFF &_WDT_OFF &_HS_OSC &_PWRTE_OFF
+                      00004 
+  00000020            00005 SAYI0 EQU 0X20
+  00000021            00006 SAYI1 EQU 0X21
+  00000022            00007 SAYI2 EQU 0X22
+  00000023            00008 BIRLER EQU 0X23
+  00000024            00009 ONLAR EQU 0X24
+  00000025            00010 YUZLER EQU 0X25
+  00000026            00011 BINLER EQU 0X26
+  00000027            00012 TEMP1 EQU 0X27
+  00000028            00013 TEMP2 EQU 0X28
+  00000029            00014 TEMP3 EQU 0X29
+  00000030            00015 TEMP4 EQU 0X30
+  00000031            00016 TEMP EQU 0X31
+                      00017 
+                      00018 
+                      00019 
+Warning[205]: Found directive in column 1. (ORG)
+0000                  00020 ORG 0X00
+Warning[203]: Found opcode in column 1. (GOTO)
+0000   2805           00021 GOTO PROGRAM
+Warning[205]: Found directive in column 1. (ORG)
+0004                  00022 ORG 0X04
+Warning[203]: Found opcode in column 1. (GOTO)
+0004   2805           00023 GOTO PROGRAM
+                      00024 
+                      00025 
+0005                  00026 PROGRAM
+Warning[205]: Found directive in column 1. (BANKSEL)
+0005   1683 1303      00027 BANKSEL TRISB
+Warning[203]: Found opcode in column 1. (CLRF)
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0007   0186           00028 CLRF TRISB
+Warning[203]: Found opcode in column 1. (MOVLW)
+0008   30F0           00029 MOVLW B'11110000'
+Warning[203]: Found opcode in column 1. (MOVWF)
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0009   0088           00030 MOVWF TRISD
+Warning[205]: Found directive in column 1. (BANKSEL)
+000A   1283 1303      00031 BANKSEL PORTB
+MPASM  5.51                        KEYPAD.ASM   7-10-2019  0:18:12         PAGE  2
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+Warning[203]: Found opcode in column 1. (CLRF)
+000C   0186           00032 CLRF PORTB
+Warning[203]: Found opcode in column 1. (CLRF)
+000D   0188           00033 CLRF PORTD
+Warning[203]: Found opcode in column 1. (MOVLW)
+000E   3000           00034 MOVLW .0
+Warning[203]: Found opcode in column 1. (MOVWF)
+000F   00A6           00035 MOVWF BINLER
+Warning[203]: Found opcode in column 1. (MOVWF)
+0010   00A5           00036 MOVWF YUZLER
+Warning[203]: Found opcode in column 1. (MOVWF)
+0011   00A4           00037 MOVWF ONLAR
+Warning[203]: Found opcode in column 1. (MOVWF)
+0012   00A3           00038 MOVWF BIRLER
+                      00039 
+                      00040 
+0013                  00041 LOOP
+Warning[203]: Found opcode in column 1. (CALL)
+0013   208E           00042 CALL GOSTER
+Warning[203]: Found opcode in column 1. (CALL)
+0014   2016           00043 CALL TUSTARA
+Warning[203]: Found opcode in column 1. (GOTO)
+0015   2813           00044 GOTO LOOP
+                      00045 
+                      00046 
+0016                  00047 TUSTARA
+Warning[203]: Found opcode in column 1. (MOVLW)
+0016   30F7           00048 MOVLW B'11110111'
+Warning[203]: Found opcode in column 1. (MOVWF)
+0017   0088           00049 MOVWF PORTD
+Warning[203]: Found opcode in column 1. (BTFSC)
+0018   1A08           00050 BTFSC PORTD,4
+Warning[203]: Found opcode in column 1. (GOTO)
+0019   281F           00051 GOTO B2
+Warning[203]: Found opcode in column 1. (MOVLW)
+001A   3000           00052 MOVLW .0
+Warning[203]: Found opcode in column 1. (MOVWF)
+001B   00A4           00053 MOVWF ONLAR
+Warning[203]: Found opcode in column 1. (MOVLW)
+001C   3001           00054 MOVLW .1
+Warning[203]: Found opcode in column 1. (MOVWF)
+001D   00A3           00055 MOVWF BIRLER
+Warning[203]: Found opcode in column 1. (RETURN)
+001E   0008           00056 RETURN
+001F                  00057 B2
+Warning[203]: Found opcode in column 1. (BTFSC)
+001F   1A88           00058 BTFSC PORTD,5
+Warning[203]: Found opcode in column 1. (GOTO)
+0020   2826           00059 GOTO B3
+Warning[203]: Found opcode in column 1. (MOVLW)
+0021   3000           00060 MOVLW .0
+Warning[203]: Found opcode in column 1. (MOVWF)
+0022   00A4           00061 MOVWF ONLAR
+MPASM  5.51                        KEYPAD.ASM   7-10-2019  0:18:12         PAGE  3
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+Warning[203]: Found opcode in column 1. (MOVLW)
+0023   3002           00062 MOVLW .2
+Warning[203]: Found opcode in column 1. (MOVWF)
+0024   00A3           00063 MOVWF BIRLER
+Warning[203]: Found opcode in column 1. (RETURN)
+0025   0008           00064 RETURN
+0026                  00065 B3
+Warning[203]: Found opcode in column 1. (BTFSC)
+0026   1B08           00066 BTFSC PORTD,6
+Warning[203]: Found opcode in column 1. (GOTO)
+0027   282D           00067 GOTO B4
+Warning[203]: Found opcode in column 1. (MOVLW)
+0028   3000           00068 MOVLW .0
+Warning[203]: Found opcode in column 1. (MOVWF)
+0029   00A4           00069 MOVWF ONLAR
+Warning[203]: Found opcode in column 1. (MOVLW)
+002A   3003           00070 MOVLW .3
+Warning[203]: Found opcode in column 1. (MOVWF)
+002B   00A3           00071 MOVWF BIRLER
+Warning[203]: Found opcode in column 1. (RETURN)
+002C   0008           00072 RETURN
+002D                  00073 B4
+Warning[203]: Found opcode in column 1. (BTFSC)
+002D   1B88           00074 BTFSC PORTD,7
+Warning[203]: Found opcode in column 1. (GOTO)
+002E   2834           00075 GOTO B5
+Warning[203]: Found opcode in column 1. (MOVLW)
+002F   3000           00076 MOVLW .0
+Warning[203]: Found opcode in column 1. (MOVWF)
+0030   00A4           00077 MOVWF ONLAR
+Warning[203]: Found opcode in column 1. (MOVLW)
+0031   3004           00078 MOVLW .4
+Warning[203]: Found opcode in column 1. (MOVWF)
+0032   00A3           00079 MOVWF BIRLER
+Warning[203]: Found opcode in column 1. (RETURN)
+0033   0008           00080 RETURN
+                      00081 
+                      00082 
+0034                  00083 B5
+Warning[203]: Found opcode in column 1. (MOVLW)
+0034   30FB           00084 MOVLW B'11111011'
+Warning[203]: Found opcode in column 1. (MOVWF)
+0035   0088           00085 MOVWF PORTD
+Warning[203]: Found opcode in column 1. (BTFSC)
+0036   1A08           00086 BTFSC PORTD,4
+Warning[203]: Found opcode in column 1. (GOTO)
+0037   283D           00087 GOTO B6
+Warning[203]: Found opcode in column 1. (MOVLW)
+0038   3000           00088 MOVLW .0
+Warning[203]: Found opcode in column 1. (MOVWF)
+0039   00A4           00089 MOVWF ONLAR
+Warning[203]: Found opcode in column 1. (MOVLW)
+003A   3005           00090 MOVLW .5
+MPASM  5.51                        KEYPAD.ASM   7-10-2019  0:18:12         PAGE  4
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+Warning[203]: Found opcode in column 1. (MOVWF)
+003B   00A3           00091 MOVWF BIRLER
+Warning[203]: Found opcode in column 1. (RETURN)
+003C   0008           00092 RETURN
+003D                  00093 B6
+Warning[203]: Found opcode in column 1. (BTFSC)
+003D   1A88           00094 BTFSC PORTD,5
+Warning[203]: Found opcode in column 1. (GOTO)
+003E   2844           00095 GOTO B7
+Warning[203]: Found opcode in column 1. (MOVLW)
+003F   3000           00096 MOVLW .0
+Warning[203]: Found opcode in column 1. (MOVWF)
+0040   00A4           00097 MOVWF ONLAR
+Warning[203]: Found opcode in column 1. (MOVLW)
+0041   3006           00098 MOVLW .6
+Warning[203]: Found opcode in column 1. (MOVWF)
+0042   00A3           00099 MOVWF BIRLER
+Warning[203]: Found opcode in column 1. (RETURN)
+0043   0008           00100 RETURN
+0044                  00101 B7
+Warning[203]: Found opcode in column 1. (BTFSC)
+0044   1B08           00102 BTFSC PORTD,6
+Warning[203]: Found opcode in column 1. (GOTO)
+0045   284B           00103 GOTO B8
+Warning[203]: Found opcode in column 1. (MOVLW)
+0046   3000           00104 MOVLW .0
+Warning[203]: Found opcode in column 1. (MOVWF)
+0047   00A4           00105 MOVWF ONLAR
+Warning[203]: Found opcode in column 1. (MOVLW)
+0048   3007           00106 MOVLW .7
+Warning[203]: Found opcode in column 1. (MOVWF)
+0049   00A4           00107 MOVWF ONLAR
+Warning[203]: Found opcode in column 1. (RETURN)
+004A   0008           00108 RETURN
+004B                  00109 B8
+Warning[203]: Found opcode in column 1. (BTFSC)
+004B   1B88           00110 BTFSC PORTD,7
+Warning[203]: Found opcode in column 1. (GOTO)
+004C   2852           00111 GOTO B9
+Warning[203]: Found opcode in column 1. (MOVLW)
+004D   3000           00112 MOVLW .0
+Warning[203]: Found opcode in column 1. (MOVWF)
+004E   00A4           00113 MOVWF ONLAR
+Warning[203]: Found opcode in column 1. (MOVLW)
+004F   3008           00114 MOVLW .8
+Warning[203]: Found opcode in column 1. (MOVWF)
+0050   00A3           00115 MOVWF BIRLER
+Warning[203]: Found opcode in column 1. (RETURN)
+0051   0008           00116 RETURN
+                      00117 
+                      00118 
+                      00119 
+0052                  00120 B9
+MPASM  5.51                        KEYPAD.ASM   7-10-2019  0:18:12         PAGE  5
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+Warning[203]: Found opcode in column 1. (MOVLW)
+0052   30FD           00121 MOVLW B'11111101'
+Warning[203]: Found opcode in column 1. (MOVWF)
+0053   0088           00122 MOVWF PORTD
+Warning[203]: Found opcode in column 1. (BTFSC)
+0054   1A08           00123 BTFSC PORTD,4
+Warning[203]: Found opcode in column 1. (GOTO)
+0055   285B           00124 GOTO B10
+Warning[203]: Found opcode in column 1. (MOVLW)
+0056   3000           00125 MOVLW .0
+Warning[203]: Found opcode in column 1. (MOVWF)
+0057   00A4           00126 MOVWF ONLAR
+Warning[203]: Found opcode in column 1. (MOVLW)
+0058   3009           00127 MOVLW .9
+Warning[203]: Found opcode in column 1. (MOVWF)
+0059   00A3           00128 MOVWF BIRLER
+Warning[203]: Found opcode in column 1. (RETURN)
+005A   0008           00129 RETURN
+005B                  00130 B10
+Warning[203]: Found opcode in column 1. (BTFSC)
+005B   1A88           00131 BTFSC PORTD,5
+Warning[203]: Found opcode in column 1. (GOTO)
+005C   2862           00132 GOTO B11
+Warning[203]: Found opcode in column 1. (MOVLW)
+005D   3001           00133 MOVLW .1
+Warning[203]: Found opcode in column 1. (MOVWF)
+005E   00A4           00134 MOVWF ONLAR
+Warning[203]: Found opcode in column 1. (MOVLW)
+005F   3000           00135 MOVLW .0
+Warning[203]: Found opcode in column 1. (MOVWF)
+0060   00A3           00136 MOVWF BIRLER
+Warning[203]: Found opcode in column 1. (RETURN)
+0061   0008           00137 RETURN
+0062                  00138 B11
+Warning[203]: Found opcode in column 1. (BTFSC)
+0062   1B08           00139 BTFSC PORTD,6
+Warning[203]: Found opcode in column 1. (GOTO)
+0063   2869           00140 GOTO B12
+Warning[203]: Found opcode in column 1. (MOVLW)
+0064   3001           00141 MOVLW .1
+Warning[203]: Found opcode in column 1. (MOVWF)
+0065   00A4           00142 MOVWF ONLAR
+Warning[203]: Found opcode in column 1. (MOVLW)
+0066   3001           00143 MOVLW .1
+Warning[203]: Found opcode in column 1. (MOVWF)
+0067   00A4           00144 MOVWF ONLAR
+Warning[203]: Found opcode in column 1. (RETURN)
+0068   0008           00145 RETURN
+0069                  00146 B12
+Warning[203]: Found opcode in column 1. (BTFSC)
+0069   1B88           00147 BTFSC PORTD,7
+Warning[203]: Found opcode in column 1. (GOTO)
+006A   2870           00148 GOTO B13
+MPASM  5.51                        KEYPAD.ASM   7-10-2019  0:18:12         PAGE  6
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+Warning[203]: Found opcode in column 1. (MOVLW)
+006B   3001           00149 MOVLW .1
+Warning[203]: Found opcode in column 1. (MOVWF)
+006C   00A4           00150 MOVWF ONLAR
+Warning[203]: Found opcode in column 1. (MOVLW)
+006D   3002           00151 MOVLW .2
+Warning[203]: Found opcode in column 1. (MOVWF)
+006E   00A3           00152 MOVWF BIRLER
+Warning[203]: Found opcode in column 1. (RETURN)
+006F   0008           00153 RETURN
+                      00154 
+                      00155 
+0070                  00156 B13
+Warning[203]: Found opcode in column 1. (MOVLW)
+0070   30FE           00157 MOVLW B'11111110'
+Warning[203]: Found opcode in column 1. (MOVWF)
+0071   0088           00158 MOVWF PORTD
+Warning[203]: Found opcode in column 1. (BTFSC)
+0072   1A08           00159 BTFSC PORTD,4
+Warning[203]: Found opcode in column 1. (GOTO)
+0073   2879           00160 GOTO B14
+Warning[203]: Found opcode in column 1. (MOVLW)
+0074   3001           00161 MOVLW .1
+Warning[203]: Found opcode in column 1. (MOVWF)
+0075   00A4           00162 MOVWF ONLAR
+Warning[203]: Found opcode in column 1. (MOVLW)
+0076   3003           00163 MOVLW .3
+Warning[203]: Found opcode in column 1. (MOVWF)
+0077   00A3           00164 MOVWF BIRLER
+Warning[203]: Found opcode in column 1. (RETURN)
+0078   0008           00165 RETURN
+0079                  00166 B14
+Warning[203]: Found opcode in column 1. (BTFSC)
+0079   1A88           00167 BTFSC PORTD,5
+Warning[203]: Found opcode in column 1. (GOTO)
+007A   2880           00168 GOTO B15
+Warning[203]: Found opcode in column 1. (MOVLW)
+007B   3001           00169 MOVLW .1
+Warning[203]: Found opcode in column 1. (MOVWF)
+007C   00A4           00170 MOVWF ONLAR
+Warning[203]: Found opcode in column 1. (MOVLW)
+007D   3004           00171 MOVLW .4
+Warning[203]: Found opcode in column 1. (MOVWF)
+007E   00A3           00172 MOVWF BIRLER
+Warning[203]: Found opcode in column 1. (RETURN)
+007F   0008           00173 RETURN
+0080                  00174 B15
+Warning[203]: Found opcode in column 1. (BTFSC)
+0080   1B08           00175 BTFSC PORTD,6
+Warning[203]: Found opcode in column 1. (GOTO)
+0081   2887           00176 GOTO B16
+Warning[203]: Found opcode in column 1. (MOVLW)
+0082   3001           00177 MOVLW .1
+MPASM  5.51                        KEYPAD.ASM   7-10-2019  0:18:12         PAGE  7
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+Warning[203]: Found opcode in column 1. (MOVWF)
+0083   00A4           00178 MOVWF ONLAR
+Warning[203]: Found opcode in column 1. (MOVLW)
+0084   3005           00179 MOVLW .5
+Warning[203]: Found opcode in column 1. (MOVWF)
+0085   00A4           00180 MOVWF ONLAR
+Warning[203]: Found opcode in column 1. (RETURN)
+0086   0008           00181 RETURN
+0087                  00182 B16
+Warning[203]: Found opcode in column 1. (BTFSC)
+0087   1B88           00183 BTFSC PORTD,7
+Warning[203]: Found opcode in column 1. (RETURN)
+0088   0008           00184 RETURN
+Warning[203]: Found opcode in column 1. (MOVLW)
+0089   3001           00185 MOVLW .1
+Warning[203]: Found opcode in column 1. (MOVWF)
+008A   00A4           00186 MOVWF ONLAR
+Warning[203]: Found opcode in column 1. (MOVLW)
+008B   3006           00187 MOVLW .6
+Warning[203]: Found opcode in column 1. (MOVWF)
+008C   00A3           00188 MOVWF BIRLER
+Warning[203]: Found opcode in column 1. (RETURN)
+008D   0008           00189 RETURN
+                      00190 
+                      00191 
+                      00192 
+008E                  00193 GOSTER
+Warning[203]: Found opcode in column 1. (MOVLW)
+008E   3008           00194 MOVLW B'00001000'
+Warning[203]: Found opcode in column 1. (MOVWF)
+008F   0086           00195 MOVWF PORTB
+Warning[203]: Found opcode in column 1. (MOVF)
+0090   0823           00196 MOVF BIRLER,W
+Warning[203]: Found opcode in column 1. (MOVWF)
+0091   0088           00197 MOVWF PORTD
+Warning[203]: Found opcode in column 1. (CALL)
+0092   20A4           00198 CALL BEKLE
+Warning[203]: Found opcode in column 1. (MOVLW)
+0093   3004           00199 MOVLW B'00000100'
+Warning[203]: Found opcode in column 1. (MOVWF)
+0094   0086           00200 MOVWF PORTB
+Warning[203]: Found opcode in column 1. (MOVF)
+0095   0824           00201 MOVF ONLAR,W
+Warning[203]: Found opcode in column 1. (MOVWF)
+0096   0088           00202 MOVWF PORTD
+Warning[203]: Found opcode in column 1. (CALL)
+0097   20A4           00203 CALL BEKLE
+Warning[203]: Found opcode in column 1. (MOVLW)
+0098   3002           00204 MOVLW B'00000010'
+Warning[203]: Found opcode in column 1. (MOVWF)
+0099   0086           00205 MOVWF PORTB
+Warning[203]: Found opcode in column 1. (MOVF)
+009A   0825           00206 MOVF YUZLER,W
+MPASM  5.51                        KEYPAD.ASM   7-10-2019  0:18:12         PAGE  8
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+Warning[203]: Found opcode in column 1. (MOVWF)
+009B   0088           00207 MOVWF PORTD
+Warning[203]: Found opcode in column 1. (CALL)
+009C   20A4           00208 CALL BEKLE
+Warning[203]: Found opcode in column 1. (MOVLW)
+009D   3001           00209 MOVLW B'00000001'
+Warning[203]: Found opcode in column 1. (MOVWF)
+009E   0086           00210 MOVWF PORTB
+Warning[203]: Found opcode in column 1. (MOVF)
+009F   0826           00211 MOVF BINLER,W
+Warning[203]: Found opcode in column 1. (MOVWF)
+00A0   0088           00212 MOVWF PORTD
+Warning[203]: Found opcode in column 1. (CALL)
+00A1   20A4           00213 CALL BEKLE
+Warning[203]: Found opcode in column 1. (CLRF)
+00A2   0186           00214 CLRF PORTB
+Warning[203]: Found opcode in column 1. (RETURN)
+00A3   0008           00215 RETURN
+                      00216 
+00A4                  00217 BEKLE
+Warning[205]: Found directive in column 1. (BANKSEL)
+00A4   1283 1303      00218 BANKSEL SAYI0
+Warning[203]: Found opcode in column 1. (MOVLW)
+00A6   3032           00219 MOVLW .50
+Warning[203]: Found opcode in column 1. (MOVWF)
+00A7   00A0           00220 MOVWF SAYI0
+00A8                  00221 BEKLE1
+Warning[203]: Found opcode in column 1. (MOVLW)
+00A8   3032           00222 MOVLW .50
+Warning[203]: Found opcode in column 1. (MOVWF)
+00A9   00A1           00223 MOVWF SAYI1
+00AA                  00224 BEKLE2
+Warning[203]: Found opcode in column 1. (MOVLW)
+00AA   3032           00225 MOVLW .50
+Warning[203]: Found opcode in column 1. (MOVWF)
+00AB   00A2           00226 MOVWF SAYI2
+00AC                  00227 BEKLE3
+Warning[203]: Found opcode in column 1. (DECFSZ)
+00AC   0BA2           00228 DECFSZ SAYI2,F
+Warning[203]: Found opcode in column 1. (GOTO)
+00AD   28AC           00229 GOTO BEKLE3
+Warning[203]: Found opcode in column 1. (DECFSZ)
+00AE   0BA1           00230 DECFSZ SAYI1,F
+Warning[203]: Found opcode in column 1. (GOTO)
+00AF   28AA           00231 GOTO BEKLE2
+Warning[203]: Found opcode in column 1. (DECFSZ)
+00B0   0BA0           00232 DECFSZ SAYI0,F
+Warning[203]: Found opcode in column 1. (GOTO)
+00B1   28A8           00233 GOTO BEKLE1
+Warning[203]: Found opcode in column 1. (RETURN)
+00B2   0008           00234 RETURN
+                      00235 
+                      00236 
+MPASM  5.51                        KEYPAD.ASM   7-10-2019  0:18:12         PAGE  9
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00237 
+                      00238 
+                      00239 
+                      00240 
+                      00241 
+Warning[205]: Found directive in column 1. (END)
+                      00242 END
+MPASM  5.51                        KEYPAD.ASM   7-10-2019  0:18:12         PAGE 10
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+ACKDT                             00000005
+ACKEN                             00000004
+ACKSTAT                           00000006
+ADCON0                            0000001F
+ADCON1                            0000009F
+ADCS0                             00000006
+ADCS1                             00000007
+ADCS2                             00000006
+ADDEN                             00000003
+ADFM                              00000007
+ADIE                              00000006
+ADIF                              00000006
+ADON                              00000000
+ADRESH                            0000001E
+ADRESL                            0000009E
+B10                               0000005B
+B11                               00000062
+B12                               00000069
+B13                               00000070
+B14                               00000079
+B15                               00000080
+B16                               00000087
+B2                                0000001F
+B3                                00000026
+B4                                0000002D
+B5                                00000034
+B6                                0000003D
+B7                                00000044
+B8                                0000004B
+B9                                00000052
+BCLIE                             00000003
+BCLIF                             00000003
+BEKLE                             000000A4
+BEKLE1                            000000A8
+BEKLE2                            000000AA
+BEKLE3                            000000AC
+BF                                00000000
+BINLER                            00000026
+BIRLER                            00000023
+BRGH                              00000002
+C                                 00000000
+C1INV                             00000004
+C1OUT                             00000006
+C2INV                             00000005
+C2OUT                             00000007
+CCP1CON                           00000017
+CCP1IE                            00000002
+CCP1IF                            00000002
+CCP1M0                            00000000
+CCP1M1                            00000001
+CCP1M2                            00000002
+CCP1M3                            00000003
+CCP1X                             00000005
+MPASM  5.51                        KEYPAD.ASM   7-10-2019  0:18:12         PAGE 11
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+CCP1Y                             00000004
+CCP2CON                           0000001D
+CCP2IE                            00000000
+CCP2IF                            00000000
+CCP2M0                            00000000
+CCP2M1                            00000001
+CCP2M2                            00000002
+CCP2M3                            00000003
+CCP2X                             00000005
+CCP2Y                             00000004
+CCPR1                             00000015
+CCPR1H                            00000016
+CCPR1L                            00000015
+CCPR2                             0000001B
+CCPR2H                            0000001C
+CCPR2L                            0000001B
+CHS0                              00000003
+CHS1                              00000004
+CHS2                              00000005
+CIS                               00000003
+CKE                               00000006
+CKP                               00000004
+CM0                               00000000
+CM1                               00000001
+CM2                               00000002
+CMCON                             0000009C
+CMIE                              00000006
+CMIF                              00000006
+CREN                              00000004
+CSRC                              00000007
+CVR0                              00000000
+CVR1                              00000001
+CVR2                              00000002
+CVR3                              00000003
+CVRCON                            0000009D
+CVREN                             00000007
+CVROE                             00000006
+CVRR                              00000005
+D                                 00000005
+DATA_ADDRESS                      00000005
+DC                                00000001
+D_A                               00000005
+D_NOT_A                           00000005
+EEADR                             0000010D
+EEADRH                            0000010F
+EECON1                            0000018C
+EECON2                            0000018D
+EEDATA                            0000010C
+EEDATH                            0000010E
+EEIE                              00000004
+EEIF                              00000004
+EEPGD                             00000007
+F                                 00000001
+MPASM  5.51                        KEYPAD.ASM   7-10-2019  0:18:12         PAGE 12
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+FERR                              00000002
+FSR                               00000004
+GCEN                              00000007
+GIE                               00000007
+GO                                00000002
+GOSTER                            0000008E
+GO_DONE                           00000002
+GO_NOT_DONE                       00000002
+I2C_DATA                          00000005
+I2C_READ                          00000002
+I2C_START                         00000003
+I2C_STOP                          00000004
+IBF                               00000007
+IBOV                              00000005
+INDF                              00000000
+INTCON                            0000000B
+INTE                              00000004
+INTEDG                            00000006
+INTF                              00000001
+IRP                               00000007
+LOOP                              00000013
+NOT_A                             00000005
+NOT_ADDRESS                       00000005
+NOT_BO                            00000000
+NOT_BOR                           00000000
+NOT_DONE                          00000002
+NOT_PD                            00000003
+NOT_POR                           00000001
+NOT_RBPU                          00000007
+NOT_RC8                           00000006
+NOT_T1SYNC                        00000002
+NOT_TO                            00000004
+NOT_TX8                           00000006
+NOT_W                             00000002
+NOT_WRITE                         00000002
+OBF                               00000006
+OERR                              00000001
+ONLAR                             00000024
+OPTION_REG                        00000081
+P                                 00000004
+PCFG0                             00000000
+PCFG1                             00000001
+PCFG2                             00000002
+PCFG3                             00000003
+PCL                               00000002
+PCLATH                            0000000A
+PCON                              0000008E
+PEIE                              00000006
+PEN                               00000002
+PIE1                              0000008C
+PIE2                              0000008D
+PIR1                              0000000C
+PIR2                              0000000D
+MPASM  5.51                        KEYPAD.ASM   7-10-2019  0:18:12         PAGE 13
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+PORTA                             00000005
+PORTB                             00000006
+PORTC                             00000007
+PORTD                             00000008
+PORTE                             00000009
+PR2                               00000092
+PROGRAM                           00000005
+PS0                               00000000
+PS1                               00000001
+PS2                               00000002
+PSA                               00000003
+PSPIE                             00000007
+PSPIF                             00000007
+PSPMODE                           00000004
+R                                 00000002
+RA0                               00000000
+RA1                               00000001
+RA2                               00000002
+RA3                               00000003
+RA4                               00000004
+RA5                               00000005
+RB0                               00000000
+RB1                               00000001
+RB2                               00000002
+RB3                               00000003
+RB4                               00000004
+RB5                               00000005
+RB6                               00000006
+RB7                               00000007
+RBIE                              00000003
+RBIF                              00000000
+RC0                               00000000
+RC1                               00000001
+RC2                               00000002
+RC3                               00000003
+RC4                               00000004
+RC5                               00000005
+RC6                               00000006
+RC7                               00000007
+RC8_9                             00000006
+RC9                               00000006
+RCD8                              00000000
+RCEN                              00000003
+RCIE                              00000005
+RCIF                              00000005
+RCREG                             0000001A
+RCSTA                             00000018
+RD                                00000000
+RD0                               00000000
+RD1                               00000001
+RD2                               00000002
+RD3                               00000003
+RD4                               00000004
+MPASM  5.51                        KEYPAD.ASM   7-10-2019  0:18:12         PAGE 14
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+RD5                               00000005
+RD6                               00000006
+RD7                               00000007
+RE0                               00000000
+RE1                               00000001
+RE2                               00000002
+READ_WRITE                        00000002
+RP0                               00000005
+RP1                               00000006
+RSEN                              00000001
+RX9                               00000006
+RX9D                              00000000
+R_NOT_W                           00000002
+R_W                               00000002
+S                                 00000003
+SAYI0                             00000020
+SAYI1                             00000021
+SAYI2                             00000022
+SEN                               00000000
+SMP                               00000007
+SPBRG                             00000099
+SPEN                              00000007
+SREN                              00000005
+SSPADD                            00000093
+SSPBUF                            00000013
+SSPCON                            00000014
+SSPCON2                           00000091
+SSPEN                             00000005
+SSPIE                             00000003
+SSPIF                             00000003
+SSPM0                             00000000
+SSPM1                             00000001
+SSPM2                             00000002
+SSPM3                             00000003
+SSPOV                             00000006
+SSPSTAT                           00000094
+STATUS                            00000003
+SYNC                              00000004
+T0CS                              00000005
+T0IE                              00000005
+T0IF                              00000002
+T0SE                              00000004
+T1CKPS0                           00000004
+T1CKPS1                           00000005
+T1CON                             00000010
+T1INSYNC                          00000002
+T1OSCEN                           00000003
+T1SYNC                            00000002
+T2CKPS0                           00000000
+T2CKPS1                           00000001
+T2CON                             00000012
+TEMP                              00000031
+TEMP1                             00000027
+MPASM  5.51                        KEYPAD.ASM   7-10-2019  0:18:12         PAGE 15
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+TEMP2                             00000028
+TEMP3                             00000029
+TEMP4                             00000030
+TMR0                              00000001
+TMR0IE                            00000005
+TMR0IF                            00000002
+TMR1                              0000000E
+TMR1CS                            00000001
+TMR1H                             0000000F
+TMR1IE                            00000000
+TMR1IF                            00000000
+TMR1L                             0000000E
+TMR1ON                            00000000
+TMR2                              00000011
+TMR2IE                            00000001
+TMR2IF                            00000001
+TMR2ON                            00000002
+TOUTPS0                           00000003
+TOUTPS1                           00000004
+TOUTPS2                           00000005
+TOUTPS3                           00000006
+TRISA                             00000085
+TRISA0                            00000000
+TRISA1                            00000001
+TRISA2                            00000002
+TRISA3                            00000003
+TRISA4                            00000004
+TRISA5                            00000005
+TRISB                             00000086
+TRISB0                            00000000
+TRISB1                            00000001
+TRISB2                            00000002
+TRISB3                            00000003
+TRISB4                            00000004
+TRISB5                            00000005
+TRISB6                            00000006
+TRISB7                            00000007
+TRISC                             00000087
+TRISC0                            00000000
+TRISC1                            00000001
+TRISC2                            00000002
+TRISC3                            00000003
+TRISC4                            00000004
+TRISC5                            00000005
+TRISC6                            00000006
+TRISC7                            00000007
+TRISD                             00000088
+TRISD0                            00000000
+TRISD1                            00000001
+TRISD2                            00000002
+TRISD3                            00000003
+TRISD4                            00000004
+TRISD5                            00000005
+MPASM  5.51                        KEYPAD.ASM   7-10-2019  0:18:12         PAGE 16
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+TRISD6                            00000006
+TRISD7                            00000007
+TRISE                             00000089
+TRISE0                            00000000
+TRISE1                            00000001
+TRISE2                            00000002
+TRMT                              00000001
+TUSTARA                           00000016
+TX8_9                             00000006
+TX9                               00000006
+TX9D                              00000000
+TXD8                              00000000
+TXEN                              00000005
+TXIE                              00000004
+TXIF                              00000004
+TXREG                             00000019
+TXSTA                             00000098
+UA                                00000001
+W                                 00000000
+WCOL                              00000007
+WR                                00000001
+WREN                              00000002
+WRERR                             00000003
+YUZLER                            00000025
+Z                                 00000002
+_BODEN_OFF                        00003FBF
+_BODEN_ON                         00003FFF
+_BOREN_OFF                        00003FBF
+_BOREN_ON                         00003FFF
+_CONFIG                           00002007
+_CPD_OFF                          00003FFF
+_CPD_ON                           00003EFF
+_CP_ALL                           00001FFF
+_CP_OFF                           00003FFF
+_CP_ON                            00001FFF
+_DEBUG_OFF                        00003FFF
+_DEBUG_ON                         000037FF
+_DEVID1                           00002006
+_FOSC_EXTRC                       00003FFF
+_FOSC_HS                          00003FFE
+_FOSC_LP                          00003FFC
+_FOSC_XT                          00003FFD
+_HS_OSC                           00003FFE
+_IDLOC0                           00002000
+_IDLOC1                           00002001
+_IDLOC2                           00002002
+_IDLOC3                           00002003
+_LP_OSC                           00003FFC
+_LVP_OFF                          00003F7F
+_LVP_ON                           00003FFF
+_PWRTE_OFF                        00003FFF
+_PWRTE_ON                         00003FF7
+_RC_OSC                           00003FFF
+MPASM  5.51                        KEYPAD.ASM   7-10-2019  0:18:12         PAGE 17
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+_WDTE_OFF                         00003FFB
+_WDTE_ON                          00003FFF
+_WDT_OFF                          00003FFB
+_WDT_ON                           00003FFF
+_WRT_1FOURTH                      00003BFF
+_WRT_256                          00003DFF
+_WRT_HALF                         000039FF
+_WRT_OFF                          00003FFF
+_XT_OSC                           00003FFD
+__16F877A                         00000001
+__DEBUG                           1
+
+
+MEMORY USAGE MAP ('X' = Used,  '-' = Unused)
+
+0000 : X---XXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0040 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0080 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXX-------------
+2000 : -------X-------- ---------------- ---------------- ----------------
+
+All other memory blocks unused.
+
+Program Memory Words Used:   176
+Program Memory Words Free:  8016
+
+
+Errors   :     0
+Warnings :   178 reported,     0 suppressed
+Messages :     2 reported,     0 suppressed
+
+

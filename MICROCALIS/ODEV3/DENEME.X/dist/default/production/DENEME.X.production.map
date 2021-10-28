@@ -1,0 +1,58 @@
+MPLINK 5.09, LINKER
+Linker Map File - Created Sat Nov 03 17:06:05 2018
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000002
+                   .cinit    romdata   0x000001    program   0x000004
+                   .org_1       code   0x000004    program   0x0000de
+.config_2007_BUILD/DEFAULT/PRODUCTION/NEWASMT       code   0x002007    program   0x000002
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000002      
+                            0x000004    0x000072      
+                            0x002007    0x002007      
+            115 out of 8454 program addresses used, program memory utilization is 1%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                   BASTAN   0x000054    program     static C:\Users\black\Desktop\ODEV3\DENEME.X\newAsmTemplate.asm
+                  BEKLEME   0x00006a    program     static C:\Users\black\Desktop\ODEV3\DENEME.X\newAsmTemplate.asm
+                 BEKLEME2   0x00006c    program     static C:\Users\black\Desktop\ODEV3\DENEME.X\newAsmTemplate.asm
+             BEKLEMEDONGU   0x00006e    program     static C:\Users\black\Desktop\ODEV3\DENEME.X\newAsmTemplate.asm
+                    DONGU   0x00002a    program     static C:\Users\black\Desktop\ODEV3\DENEME.X\newAsmTemplate.asm
+                  GOSTERB   0x000040    program     static C:\Users\black\Desktop\ODEV3\DENEME.X\newAsmTemplate.asm
+                  GOSTERO   0x00004c    program     static C:\Users\black\Desktop\ODEV3\DENEME.X\newAsmTemplate.asm
+                    KESME   0x00002b    program     static C:\Users\black\Desktop\ODEV3\DENEME.X\newAsmTemplate.asm
+                      KNT   0x00003b    program     static C:\Users\black\Desktop\ODEV3\DENEME.X\newAsmTemplate.asm
+            LOOKUP_BIRLER   0x000057    program     static C:\Users\black\Desktop\ODEV3\DENEME.X\newAsmTemplate.asm
+             LOOKUP_ONLAR   0x000063    program     static C:\Users\black\Desktop\ODEV3\DENEME.X\newAsmTemplate.asm
+                     MAIN   0x000005    program     static C:\Users\black\Desktop\ODEV3\DENEME.X\newAsmTemplate.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                     MAIN   0x000005    program     static C:\Users\black\Desktop\ODEV3\DENEME.X\newAsmTemplate.asm
+                    DONGU   0x00002a    program     static C:\Users\black\Desktop\ODEV3\DENEME.X\newAsmTemplate.asm
+                    KESME   0x00002b    program     static C:\Users\black\Desktop\ODEV3\DENEME.X\newAsmTemplate.asm
+                      KNT   0x00003b    program     static C:\Users\black\Desktop\ODEV3\DENEME.X\newAsmTemplate.asm
+                  GOSTERB   0x000040    program     static C:\Users\black\Desktop\ODEV3\DENEME.X\newAsmTemplate.asm
+                  GOSTERO   0x00004c    program     static C:\Users\black\Desktop\ODEV3\DENEME.X\newAsmTemplate.asm
+                   BASTAN   0x000054    program     static C:\Users\black\Desktop\ODEV3\DENEME.X\newAsmTemplate.asm
+            LOOKUP_BIRLER   0x000057    program     static C:\Users\black\Desktop\ODEV3\DENEME.X\newAsmTemplate.asm
+             LOOKUP_ONLAR   0x000063    program     static C:\Users\black\Desktop\ODEV3\DENEME.X\newAsmTemplate.asm
+                  BEKLEME   0x00006a    program     static C:\Users\black\Desktop\ODEV3\DENEME.X\newAsmTemplate.asm
+                 BEKLEME2   0x00006c    program     static C:\Users\black\Desktop\ODEV3\DENEME.X\newAsmTemplate.asm
+             BEKLEMEDONGU   0x00006e    program     static C:\Users\black\Desktop\ODEV3\DENEME.X\newAsmTemplate.asm
+
+

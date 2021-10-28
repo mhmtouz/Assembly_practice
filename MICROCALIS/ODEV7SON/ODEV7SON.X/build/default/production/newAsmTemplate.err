@@ -1,0 +1,8 @@
+Warning[207] C:\USERS\BLACK\DESKTOP\ODEV7SON\ODEV7SON.X\NEWASMTEMPLATE.ASM 4 : Found label after column 1. (BEKLE)
+Warning[207] C:\USERS\BLACK\DESKTOP\ODEV7SON\ODEV7SON.X\NEWASMTEMPLATE.ASM 5 : Found label after column 1. (BEKLE2)
+Message[302] C:\USERS\BLACK\DESKTOP\ODEV7SON\ODEV7SON.X\NEWASMTEMPLATE.ASM 18 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\BLACK\DESKTOP\ODEV7SON\ODEV7SON.X\NEWASMTEMPLATE.ASM 19 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\BLACK\DESKTOP\ODEV7SON\ODEV7SON.X\NEWASMTEMPLATE.ASM 20 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\BLACK\DESKTOP\ODEV7SON\ODEV7SON.X\NEWASMTEMPLATE.ASM 31 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\BLACK\DESKTOP\ODEV7SON\ODEV7SON.X\NEWASMTEMPLATE.ASM 34 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\BLACK\DESKTOP\ODEV7SON\ODEV7SON.X\NEWASMTEMPLATE.ASM 42 : Register in operand not in bank 0.  Ensure that bank bits are correct.

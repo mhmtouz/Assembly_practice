@@ -1,0 +1,23 @@
+MPASM 5.81                NEWASMTEMPLATE.ASM   2-23-2020  21:16:38         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001 
+                      00002 
+                      00003 
+Error[129]  : Expected (END)
+MPASM 5.81                NEWASMTEMPLATE.ASM   2-23-2020  21:16:38         PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+__16F877A                         00000001
+
+Errors   :     1
+Warnings :     0 reported,     0 suppressed
+Messages :     0 reported,     0 suppressed
+
+

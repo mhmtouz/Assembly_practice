@@ -1,0 +1,56 @@
+MPLINK 5.09, LINKER
+Linker Map File - Created Wed Jan 22 23:35:23 2020
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000002
+                   .cinit    romdata   0x000001    program   0x000004
+                   .org_1       code   0x000004    program   0x0000c8
+.config_2007_BUILD/DEFAULT/PRODUCTION/NEWASMT       code   0x002007    program   0x000002
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000002      
+                            0x000004    0x000067      
+                            0x002007    0x002007      
+            104 out of 8454 program addresses used, program memory utilization is 1%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                    BEKLE   0x00005f    program     static C:\Users\MU\Desktop\Assembly\7SEGNEW.X\newAsmTemplate.asm
+                   BEKLE2   0x000061    program     static C:\Users\MU\Desktop\Assembly\7SEGNEW.X\newAsmTemplate.asm
+                   BEKLED   0x000063    program     static C:\Users\MU\Desktop\Assembly\7SEGNEW.X\newAsmTemplate.asm
+                    DONGU   0x000028    program     static C:\Users\MU\Desktop\Assembly\7SEGNEW.X\newAsmTemplate.asm
+                    ISLEM   0x00003b    program     static C:\Users\MU\Desktop\Assembly\7SEGNEW.X\newAsmTemplate.asm
+                    KESME   0x000029    program     static C:\Users\MU\Desktop\Assembly\7SEGNEW.X\newAsmTemplate.asm
+                   LOOKUP   0x000053    program     static C:\Users\MU\Desktop\Assembly\7SEGNEW.X\newAsmTemplate.asm
+                     MAIN   0x000005    program     static C:\Users\MU\Desktop\Assembly\7SEGNEW.X\newAsmTemplate.asm
+                      SON   0x00003a    program     static C:\Users\MU\Desktop\Assembly\7SEGNEW.X\newAsmTemplate.asm
+                      YAK   0x000048    program     static C:\Users\MU\Desktop\Assembly\7SEGNEW.X\newAsmTemplate.asm
+                     YAK2   0x00004c    program     static C:\Users\MU\Desktop\Assembly\7SEGNEW.X\newAsmTemplate.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                     MAIN   0x000005    program     static C:\Users\MU\Desktop\Assembly\7SEGNEW.X\newAsmTemplate.asm
+                    DONGU   0x000028    program     static C:\Users\MU\Desktop\Assembly\7SEGNEW.X\newAsmTemplate.asm
+                    KESME   0x000029    program     static C:\Users\MU\Desktop\Assembly\7SEGNEW.X\newAsmTemplate.asm
+                      SON   0x00003a    program     static C:\Users\MU\Desktop\Assembly\7SEGNEW.X\newAsmTemplate.asm
+                    ISLEM   0x00003b    program     static C:\Users\MU\Desktop\Assembly\7SEGNEW.X\newAsmTemplate.asm
+                      YAK   0x000048    program     static C:\Users\MU\Desktop\Assembly\7SEGNEW.X\newAsmTemplate.asm
+                     YAK2   0x00004c    program     static C:\Users\MU\Desktop\Assembly\7SEGNEW.X\newAsmTemplate.asm
+                   LOOKUP   0x000053    program     static C:\Users\MU\Desktop\Assembly\7SEGNEW.X\newAsmTemplate.asm
+                    BEKLE   0x00005f    program     static C:\Users\MU\Desktop\Assembly\7SEGNEW.X\newAsmTemplate.asm
+                   BEKLE2   0x000061    program     static C:\Users\MU\Desktop\Assembly\7SEGNEW.X\newAsmTemplate.asm
+                   BEKLED   0x000063    program     static C:\Users\MU\Desktop\Assembly\7SEGNEW.X\newAsmTemplate.asm
+
+

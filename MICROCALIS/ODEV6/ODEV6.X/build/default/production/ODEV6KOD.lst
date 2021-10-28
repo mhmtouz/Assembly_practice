@@ -1,0 +1,814 @@
+MPASM 5.81                      ODEV6KOD.ASM   12-3-2018  2:10:49         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001     LIST P=16F877A
+                      00002     #INCLUDE <P16F877A.INC>
+                      00001         LIST
+                      00002 
+                      00003 ;==========================================================================
+                      00004 ; Build date : Jul 23 2018
+                      00005 ;  MPASM PIC16F877A processor include
+                      00006 ; 
+                      00007 ;  (c) Copyright 1999-2018 Microchip Technology, All rights reserved
+                      00008 ;==========================================================================
+                      00009 
+                      00567         LIST
+2007   3F31           00003     __CONFIG H'3F31'
+Warning[207]: Found label after column 1. (KESMESAYAC)
+  00000020            00004     KESMESAYAC EQU 0X20
+Warning[207]: Found label after column 1. (TEMP)
+  00000021            00005     TEMP EQU 0X21 
+Warning[207]: Found label after column 1. (BEKLE)
+  00000022            00006     BEKLE EQU 0X22
+Warning[207]: Found label after column 1. (BEKLE2)
+  00000023            00007     BEKLE2 EQU 0X23
+Warning[207]: Found label after column 1. (SAYAC1)
+  00000027            00008     SAYAC1 EQU 0X27
+Warning[207]: Found label after column 1. (SAYAC10)
+  00000028            00009     SAYAC10 EQU 0X28
+Warning[207]: Found label after column 1. (SAYAC100)
+  00000029            00010     SAYAC100 EQU 0X29
+Warning[207]: Found label after column 1. (SAYAC1K)
+  00000030            00011     SAYAC1K EQU 0X30
+Warning[207]: Found label after column 1. (SAYAC10K)
+  00000031            00012     SAYAC10K EQU 0X31
+Warning[207]: Found label after column 1. (SAYAC100K)
+  00000032            00013     SAYAC100K EQU 0X32 
+                      00014     ORG 0X00
+0000   2???           00015     GOTO MAIN
+                      00016     ORG 0X04
+0004   2???           00017     GOTO KESME
+0005                  00018 MAIN
+0005   1683 1303      00019     BANKSEL TRISB
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0007   0186           00020     CLRF TRISB
+0008   3006           00021     MOVLW 0X06
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0009   009F           00022     MOVWF ADCON1
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+000A   1405           00023     BSF TRISA,0    
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+000B   1485           00024     BSF TRISA,1
+000C   1283 1303      00025     BANKSEL PORTB
+000E   0186           00026     CLRF PORTB
+000F   1283 1303      00027     BANKSEL SAYAC1
+0011   3005           00028     MOVLW 0X05
+0012   00A0           00029     MOVWF KESMESAYAC
+MPASM 5.81                      ODEV6KOD.ASM   12-3-2018  2:10:49         PAGE  2
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0013   3001           00030     MOVLW 0X01
+0014   00A9           00031     MOVWF SAYAC100
+0015   01A8           00032     CLRF SAYAC10
+0016   01A7           00033     CLRF SAYAC1
+0017   01B2           00034     CLRF SAYAC100K
+0018   01B1           00035     CLRF SAYAC10K
+0019   01B0           00036     CLRF SAYAC1K    
+001A   1283 1303      00037     BANKSEL TMR1H
+001C   303C           00038     MOVLW H'3C'
+001D   008F           00039     MOVWF TMR1H
+001E   30B0           00040     MOVLW H'B0'
+001F   008E           00041     MOVWF TMR1L
+0020   1283 1303      00042     BANKSEL INTCON
+0022   30C0           00043     MOVLW B'11000000'
+0023   008B           00044     MOVWF INTCON
+0024   1683 1303      00045     BANKSEL PIE1
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0026   140C           00046     BSF PIE1,TMR1IE
+0027   1283 1303      00047     BANKSEL T1CON
+0029   1290           00048     BCF T1CON,T1CKPS1
+002A   1610           00049     BSF T1CON,T1CKPS0
+002B   1410           00050     BSF T1CON,TMR1ON
+002C   2???           00051     CALL LCDCLEAR
+                      00052     ;L1 KESME ILE OTO ARTTIRMA
+002D                  00053 DONGU
+002D   2???           00054     GOTO DONGU
+002E                  00055 KESME
+002E   1283 1303      00056     BANKSEL PIR1
+0030   100C           00057     BCF PIR1,TMR1IF
+0031   1283 1303      00058     BANKSEL TMR1H
+0033   303C           00059     MOVLW H'3C'
+0034   008F           00060     MOVWF TMR1H
+0035   30B0           00061     MOVLW H'B0'
+0036   008E           00062     MOVWF TMR1L
+0037   0BA0           00063     DECFSZ KESMESAYAC,F
+0038   2???           00064     GOTO CNTRLBUTON
+0039   2???           00065     CALL WRITEKESME
+003A   3005           00066     MOVLW 0X05
+003B   00A0           00067     MOVWF KESMESAYAC
+003C   0009           00068     RETFIE
+003D                  00069 WRITEKESME    
+003D   2???           00070     CALL LCDCLEAR
+                      00071     
+003E   3082           00072     MOVLW 0X82
+003F   2???           00073     CALL CMDWRITE
+0040   0830           00074     MOVFW SAYAC1K
+0041   2???           00075     CALL LOOKUP
+0042   2???           00076     CALL DATAWRITE
+                      00077     
+0043   3081           00078     MOVLW 0X81
+0044   2???           00079     CALL CMDWRITE
+0045   0831           00080     MOVFW SAYAC10K
+0046   2???           00081     CALL LOOKUP
+MPASM 5.81                      ODEV6KOD.ASM   12-3-2018  2:10:49         PAGE  3
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0047   2???           00082     CALL DATAWRITE
+                      00083 
+0048   3080           00084     MOVLW 0X80
+0049   2???           00085     CALL CMDWRITE
+004A   0832           00086     MOVFW SAYAC100K
+004B   2???           00087     CALL LOOKUP
+004C   2???           00088     CALL DATAWRITE
+                      00089     
+004D   2???           00090     CALL WRITE1K    
+004E   0008           00091     RETURN
+004F                  00092 WRITE1K
+004F   3009           00093     MOVLW 0X09
+0050   0230           00094     SUBWF SAYAC1K,W
+0051   1903           00095     BTFSC STATUS,Z
+0052   2???           00096     GOTO WRITE10K
+Message[305]: Using default destination of 1 (file).
+0053   0AB0           00097     INCF SAYAC1K
+0054   0008           00098     RETURN
+0055                  00099 WRITE10K
+0055   01B0           00100     CLRF SAYAC1K
+0056   1503           00101     BSF STATUS,Z
+0057   3009           00102     MOVLW 0X09
+0058   0231           00103     SUBWF SAYAC10K,W
+0059   1D03           00104     BTFSS STATUS,Z
+005A   2???           00105     GOTO INC10K
+005B   2???           00106     GOTO WRITE100K
+005C                  00107 INC10K
+Message[305]: Using default destination of 1 (file).
+005C   0AB1           00108     INCF SAYAC10K
+005D   2???           00109     GOTO WRITEKESME
+005E                  00110 WRITE100K
+005E   01B1           00111     CLRF SAYAC10K    
+005F   1503           00112     BSF STATUS,Z
+0060   3001           00113     MOVLW 0X01
+0061   0232           00114     SUBWF SAYAC100K,W
+0062   1903           00115     BTFSC STATUS,Z
+0063   2???           00116     GOTO CLRALLK
+Message[305]: Using default destination of 1 (file).
+0064   0AB2           00117     INCF SAYAC100K
+0065   2???           00118     GOTO WRITEKESME
+0066                  00119 CLRALLK
+0066   01B0           00120     CLRF SAYAC1K
+0067   01B1           00121     CLRF SAYAC10K
+0068   01B2           00122     CLRF SAYAC100K
+0069   2???           00123     GOTO WRITEKESME
+                      00124  ;----------------------------------L2 BUTTON ?LE ARTTIRMA-------------------------------
+006A                  00125 LCDCLEAR
+006A   3002           00126     MOVLW 0X02
+006B   2???           00127     CALL CMDWRITE
+006C   300C           00128     MOVLW 0X0C
+006D   2???           00129     CALL CMDWRITE
+006E   3028           00130     MOVLW 0X28
+006F   2???           00131     CALL CMDWRITE
+MPASM 5.81                      ODEV6KOD.ASM   12-3-2018  2:10:49         PAGE  4
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0070   0008           00132     RETURN
+0071                  00133 CMDWRITE
+0071   00A1           00134     MOVWF TEMP
+0072   0E21           00135     SWAPF TEMP,W
+0073   2???           00136     CALL CMDSEND
+0074   0821           00137     MOVFW TEMP
+0075   2???           00138     CALL CMDSEND
+0076   0008           00139     RETURN
+0077                  00140 CMDSEND
+0077   390F           00141     ANDLW 0X0F
+0078   0086           00142     MOVWF PORTB
+0079   1283 1303      00143     BANKSEL PORTB    
+007B   1206           00144     BCF PORTB,4
+007C   1686           00145     BSF PORTB,5
+007D   2???           00146     CALL BEKLEME
+007E   1286           00147     BCF PORTB,5
+007F   0008           00148     RETURN 
+0080                  00149 WRITE
+0080   2???           00150     CALL LCDCLEAR
+0081   300A           00151     MOVLW 0X0A
+0082   0227           00152     SUBWF SAYAC1,W
+0083   1903           00153     BTFSC STATUS,Z
+0084   2???           00154     GOTO WRITE10
+                      00155     
+0085   30C2           00156     MOVLW 0XC2
+0086   2???           00157     CALL CMDWRITE
+0087   0827           00158     MOVFW SAYAC1
+0088   2???           00159     CALL LOOKUP
+0089   2???           00160     CALL DATAWRITE
+                      00161     
+008A   30C1           00162     MOVLW 0XC1
+008B   2???           00163     CALL CMDWRITE
+008C   0828           00164     MOVFW SAYAC10
+008D   2???           00165     CALL LOOKUP
+008E   2???           00166     CALL DATAWRITE
+                      00167 
+008F   30C0           00168     MOVLW 0XC0
+0090   2???           00169     CALL CMDWRITE
+0091   0829           00170     MOVFW SAYAC100
+0092   2???           00171     CALL LOOKUP
+0093   2???           00172     CALL DATAWRITE
+0094   2???           00173     GOTO CNTRLBUTON
+0095                  00174 WRITE10
+0095   01A7           00175     CLRF SAYAC1
+0096   3009           00176     MOVLW 0X09
+0097   0228           00177     SUBWF SAYAC10,W
+0098   1D03           00178     BTFSS STATUS,Z
+0099   2???           00179     GOTO INC10
+009A   2???           00180     GOTO WRITE100
+009B                  00181 INC10
+Message[305]: Using default destination of 1 (file).
+009B   0AA8           00182     INCF SAYAC10
+009C   2???           00183     GOTO WRITE
+MPASM 5.81                      ODEV6KOD.ASM   12-3-2018  2:10:49         PAGE  5
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+009D                  00184 WRITE100
+009D   01A8           00185     CLRF SAYAC10 
+009E   3002           00186     MOVLW 0X02
+009F   0229           00187     SUBWF SAYAC100,W
+00A0   1903           00188     BTFSC STATUS,Z
+00A1   2???           00189     GOTO CLRALL
+Message[305]: Using default destination of 1 (file).
+00A2   0AA9           00190     INCF SAYAC100
+00A3   2???           00191     GOTO WRITE
+00A4                  00192 CLRALL
+00A4   01A7           00193     CLRF SAYAC1
+00A5   01A8           00194     CLRF SAYAC10
+00A6   01A9           00195     CLRF SAYAC100
+00A7   2???           00196     GOTO WRITE
+00A8                  00197 CNTRLBUTON
+00A8   1805           00198      BTFSC PORTA,0
+00A9   2???           00199      GOTO INCBUTTON
+00AA   1885           00200      BTFSC PORTA,1
+00AB   2???           00201      GOTO DECBUTTON
+00AC   0009           00202      RETFIE
+00AD                  00203 INCBUTTON
+00AD   1805           00204     BTFSC PORTA,0
+00AE   2???           00205     GOTO INCBUTTON
+Message[305]: Using default destination of 1 (file).
+00AF   0AA7           00206     INCF SAYAC1
+00B0   3009           00207     MOVLW 0X09
+00B1   0229           00208     SUBWF SAYAC100,W
+00B2   1903           00209     BTFSC STATUS,Z
+00B3   2???           00210     CALL REFRESH2
+00B4   2???           00211     GOTO WRITE
+00B5                  00212 REFRESH2    
+00B5   3001           00213     MOVLW 0X01
+00B6   00A9           00214     MOVWF SAYAC100
+00B7   01A8           00215     CLRF SAYAC10
+00B8   01A7           00216     CLRF SAYAC1    
+00B9   0008           00217     RETURN
+00BA                  00218 DECBUTTON    
+00BA   1885           00219     BTFSC PORTA,1
+00BB   2???           00220     GOTO DECBUTTON    
+00BC   2???           00221     CALL CNTRLDEC1
+00BD   2???           00222     GOTO WRITE
+00BE                  00223 CNTRLDEC1
+00BE   3000           00224     MOVLW 0X00
+00BF   0227           00225     SUBWF SAYAC1,W
+00C0   1903           00226     BTFSC STATUS,Z    
+00C1   2???           00227     CALL CNTRLDEC10
+Message[305]: Using default destination of 1 (file).
+00C2   03A7           00228     DECF SAYAC1
+00C3   0008           00229     RETURN
+00C4                  00230 CNTRLDEC10
+00C4   300A           00231     MOVLW 0X0A
+00C5   00A7           00232     MOVWF SAYAC1
+00C6   3000           00233     MOVLW 0X00
+MPASM 5.81                      ODEV6KOD.ASM   12-3-2018  2:10:49         PAGE  6
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+00C7   0228           00234     SUBWF SAYAC10,W
+00C8   1903           00235     BTFSC STATUS,Z    
+00C9   2???           00236     CALL CNTRLDEC100
+Message[305]: Using default destination of 1 (file).
+00CA   03A8           00237     DECF SAYAC10
+00CB   0008           00238     RETURN    
+00CC                  00239 CNTRLDEC100
+00CC   300A           00240     MOVLW 0X0A
+00CD   00A8           00241     MOVWF SAYAC10    
+00CE   3001           00242     MOVLW 0X01
+00CF   0229           00243     SUBWF SAYAC100,W
+00D0   1903           00244     BTFSC STATUS,Z
+00D1   2???           00245     CALL REFRESH
+Message[305]: Using default destination of 1 (file).
+00D2   03A9           00246     DECF SAYAC100
+00D3   0008           00247     RETURN
+00D4                  00248 REFRESH
+00D4   300A           00249     MOVLW 0X0A
+00D5   00A9           00250     MOVWF SAYAC100
+00D6   300A           00251     MOVLW 0X0A
+00D7   00A8           00252     MOVWF SAYAC10
+00D8   300A           00253     MOVLW 0X0A
+00D9   00A7           00254     MOVWF SAYAC1    
+00DA   0008           00255     RETURN
+00DB                  00256 DATAWRITE
+00DB   00A1           00257     MOVWF TEMP
+00DC   0E21           00258     SWAPF TEMP,W
+00DD   2???           00259     CALL DATASEND
+00DE   0821           00260     MOVFW TEMP
+00DF   2???           00261     CALL DATASEND
+00E0   0008           00262     RETURN
+00E1                  00263 DATASEND
+00E1   390F           00264     ANDLW B'00001111'
+00E2   0086           00265     MOVWF PORTB
+00E3   1283 1303      00266     BANKSEL PORTB
+00E5   1606           00267     BSF PORTB,4
+00E6   1686           00268     BSF PORTB,5
+00E7   2???           00269     CALL BEKLEME
+00E8   1286           00270     BCF PORTB,5
+00E9   0008           00271     RETURN
+00EA                  00272 LOOKUP
+00EA   0782           00273     ADDWF PCL,F
+00EB   3430           00274     RETLW A'0'    
+00EC   3431           00275     RETLW A'1'
+00ED   3432           00276     RETLW A'2'
+00EE   3433           00277     RETLW A'3'
+00EF   3434           00278     RETLW A'4'
+00F0   3435           00279     RETLW A'5'
+00F1   3436           00280     RETLW A'6'
+00F2   3437           00281     RETLW A'7'    
+00F3   3438           00282     RETLW A'8'
+00F4   3439           00283     RETLW A'9'
+00F5   0008           00284     RETURN
+MPASM 5.81                      ODEV6KOD.ASM   12-3-2018  2:10:49         PAGE  7
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+00F6                  00285 BEKLEME
+00F6   301E           00286     MOVLW D'30'
+00F7   00A2           00287     MOVWF BEKLE
+00F8                  00288 BEKLEME2
+00F8   3050           00289     MOVLW D'80'
+00F9   00A3           00290     MOVWF BEKLE2  
+00FA                  00291 BEKLEMEDONGU
+00FA   0BA3           00292     DECFSZ BEKLE2,F
+00FB   2???           00293     GOTO BEKLEMEDONGU
+00FC   0BA2           00294     DECFSZ BEKLE,F
+00FD   2???           00295     GOTO BEKLEME2
+00FE   0008           00296     RETURN  
+3F31                  00297     END
+MPASM 5.81                      ODEV6KOD.ASM   12-3-2018  2:10:49         PAGE  8
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+ACKDT                             00000005
+ACKEN                             00000004
+ACKSTAT                           00000006
+ADCON0                            0000001F
+ADCON1                            0000009F
+ADCS0                             00000006
+ADCS1                             00000007
+ADCS2                             00000006
+ADDEN                             00000003
+ADFM                              00000007
+ADIE                              00000006
+ADIF                              00000006
+ADON                              00000000
+ADRESH                            0000001E
+ADRESL                            0000009E
+BCLIE                             00000003
+BCLIF                             00000003
+BEKLE                             00000022
+BEKLE2                            00000023
+BEKLEME                           000000F6
+BEKLEME2                          000000F8
+BEKLEMEDONGU                      000000FA
+BF                                00000000
+BRGH                              00000002
+C                                 00000000
+C1INV                             00000004
+C1OUT                             00000006
+C2INV                             00000005
+C2OUT                             00000007
+CCP1CON                           00000017
+CCP1IE                            00000002
+CCP1IF                            00000002
+CCP1M0                            00000000
+CCP1M1                            00000001
+CCP1M2                            00000002
+CCP1M3                            00000003
+CCP1X                             00000005
+CCP1Y                             00000004
+CCP2CON                           0000001D
+CCP2IE                            00000000
+CCP2IF                            00000000
+CCP2M0                            00000000
+CCP2M1                            00000001
+CCP2M2                            00000002
+CCP2M3                            00000003
+CCP2X                             00000005
+CCP2Y                             00000004
+CCPR1                             00000015
+CCPR1H                            00000016
+CCPR1L                            00000015
+CCPR2                             0000001B
+CCPR2H                            0000001C
+CCPR2L                            0000001B
+MPASM 5.81                      ODEV6KOD.ASM   12-3-2018  2:10:49         PAGE  9
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+CHS0                              00000003
+CHS1                              00000004
+CHS2                              00000005
+CIS                               00000003
+CKE                               00000006
+CKP                               00000004
+CLRALL                            000000A4
+CLRALLK                           00000066
+CM0                               00000000
+CM1                               00000001
+CM2                               00000002
+CMCON                             0000009C
+CMDSEND                           00000077
+CMDWRITE                          00000071
+CMIE                              00000006
+CMIF                              00000006
+CNTRLBUTON                        000000A8
+CNTRLDEC1                         000000BE
+CNTRLDEC10                        000000C4
+CNTRLDEC100                       000000CC
+CREN                              00000004
+CSRC                              00000007
+CVR0                              00000000
+CVR1                              00000001
+CVR2                              00000002
+CVR3                              00000003
+CVRCON                            0000009D
+CVREN                             00000007
+CVROE                             00000006
+CVRR                              00000005
+D                                 00000005
+DATASEND                          000000E1
+DATAWRITE                         000000DB
+DATA_ADDRESS                      00000005
+DC                                00000001
+DECBUTTON                         000000BA
+DONGU                             0000002D
+D_A                               00000005
+D_NOT_A                           00000005
+EEADR                             0000010D
+EEADRH                            0000010F
+EECON1                            0000018C
+EECON2                            0000018D
+EEDATA                            0000010C
+EEDATH                            0000010E
+EEIE                              00000004
+EEIF                              00000004
+EEPGD                             00000007
+F                                 00000001
+FERR                              00000002
+FSR                               00000004
+GCEN                              00000007
+GIE                               00000007
+MPASM 5.81                      ODEV6KOD.ASM   12-3-2018  2:10:49         PAGE 10
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+GO                                00000002
+GO_DONE                           00000002
+GO_NOT_DONE                       00000002
+I2C_DATA                          00000005
+I2C_READ                          00000002
+I2C_START                         00000003
+I2C_STOP                          00000004
+IBF                               00000007
+IBOV                              00000005
+INC10                             0000009B
+INC10K                            0000005C
+INCBUTTON                         000000AD
+INDF                              00000000
+INTCON                            0000000B
+INTE                              00000004
+INTEDG                            00000006
+INTF                              00000001
+IRP                               00000007
+KESME                             0000002E
+KESMESAYAC                        00000020
+LCDCLEAR                          0000006A
+LOOKUP                            000000EA
+MAIN                              00000005
+NOT_A                             00000005
+NOT_ADDRESS                       00000005
+NOT_BO                            00000000
+NOT_BOR                           00000000
+NOT_DONE                          00000002
+NOT_PD                            00000003
+NOT_POR                           00000001
+NOT_RBPU                          00000007
+NOT_RC8                           00000006
+NOT_T1SYNC                        00000002
+NOT_TO                            00000004
+NOT_TX8                           00000006
+NOT_W                             00000002
+NOT_WRITE                         00000002
+OBF                               00000006
+OERR                              00000001
+OPTION_REG                        00000081
+P                                 00000004
+PCFG0                             00000000
+PCFG1                             00000001
+PCFG2                             00000002
+PCFG3                             00000003
+PCL                               00000002
+PCLATH                            0000000A
+PCON                              0000008E
+PEIE                              00000006
+PEN                               00000002
+PIE1                              0000008C
+PIE2                              0000008D
+PIR1                              0000000C
+MPASM 5.81                      ODEV6KOD.ASM   12-3-2018  2:10:49         PAGE 11
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+PIR2                              0000000D
+PORTA                             00000005
+PORTB                             00000006
+PORTC                             00000007
+PORTD                             00000008
+PORTE                             00000009
+PR2                               00000092
+PS0                               00000000
+PS1                               00000001
+PS2                               00000002
+PSA                               00000003
+PSPIE                             00000007
+PSPIF                             00000007
+PSPMODE                           00000004
+R                                 00000002
+RA0                               00000000
+RA1                               00000001
+RA2                               00000002
+RA3                               00000003
+RA4                               00000004
+RA5                               00000005
+RB0                               00000000
+RB1                               00000001
+RB2                               00000002
+RB3                               00000003
+RB4                               00000004
+RB5                               00000005
+RB6                               00000006
+RB7                               00000007
+RBIE                              00000003
+RBIF                              00000000
+RC0                               00000000
+RC1                               00000001
+RC2                               00000002
+RC3                               00000003
+RC4                               00000004
+RC5                               00000005
+RC6                               00000006
+RC7                               00000007
+RC8_9                             00000006
+RC9                               00000006
+RCD8                              00000000
+RCEN                              00000003
+RCIE                              00000005
+RCIF                              00000005
+RCREG                             0000001A
+RCSTA                             00000018
+RD                                00000000
+RD0                               00000000
+RD1                               00000001
+RD2                               00000002
+RD3                               00000003
+RD4                               00000004
+MPASM 5.81                      ODEV6KOD.ASM   12-3-2018  2:10:49         PAGE 12
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+RD5                               00000005
+RD6                               00000006
+RD7                               00000007
+RE0                               00000000
+RE1                               00000001
+RE2                               00000002
+READ_WRITE                        00000002
+REFRESH                           000000D4
+REFRESH2                          000000B5
+RP0                               00000005
+RP1                               00000006
+RSEN                              00000001
+RX9                               00000006
+RX9D                              00000000
+R_NOT_W                           00000002
+R_W                               00000002
+S                                 00000003
+SAYAC1                            00000027
+SAYAC10                           00000028
+SAYAC100                          00000029
+SAYAC100K                         00000032
+SAYAC10K                          00000031
+SAYAC1K                           00000030
+SEN                               00000000
+SMP                               00000007
+SPBRG                             00000099
+SPEN                              00000007
+SREN                              00000005
+SSPADD                            00000093
+SSPBUF                            00000013
+SSPCON                            00000014
+SSPCON2                           00000091
+SSPEN                             00000005
+SSPIE                             00000003
+SSPIF                             00000003
+SSPM0                             00000000
+SSPM1                             00000001
+SSPM2                             00000002
+SSPM3                             00000003
+SSPOV                             00000006
+SSPSTAT                           00000094
+STATUS                            00000003
+SYNC                              00000004
+T0CS                              00000005
+T0IE                              00000005
+T0IF                              00000002
+T0SE                              00000004
+T1CKPS0                           00000004
+T1CKPS1                           00000005
+T1CON                             00000010
+T1INSYNC                          00000002
+T1OSCEN                           00000003
+T1SYNC                            00000002
+MPASM 5.81                      ODEV6KOD.ASM   12-3-2018  2:10:49         PAGE 13
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+T2CKPS0                           00000000
+T2CKPS1                           00000001
+T2CON                             00000012
+TEMP                              00000021
+TMR0                              00000001
+TMR0IE                            00000005
+TMR0IF                            00000002
+TMR1                              0000000E
+TMR1CS                            00000001
+TMR1H                             0000000F
+TMR1IE                            00000000
+TMR1IF                            00000000
+TMR1L                             0000000E
+TMR1ON                            00000000
+TMR2                              00000011
+TMR2IE                            00000001
+TMR2IF                            00000001
+TMR2ON                            00000002
+TOUTPS0                           00000003
+TOUTPS1                           00000004
+TOUTPS2                           00000005
+TOUTPS3                           00000006
+TRISA                             00000085
+TRISA0                            00000000
+TRISA1                            00000001
+TRISA2                            00000002
+TRISA3                            00000003
+TRISA4                            00000004
+TRISA5                            00000005
+TRISB                             00000086
+TRISB0                            00000000
+TRISB1                            00000001
+TRISB2                            00000002
+TRISB3                            00000003
+TRISB4                            00000004
+TRISB5                            00000005
+TRISB6                            00000006
+TRISB7                            00000007
+TRISC                             00000087
+TRISC0                            00000000
+TRISC1                            00000001
+TRISC2                            00000002
+TRISC3                            00000003
+TRISC4                            00000004
+TRISC5                            00000005
+TRISC6                            00000006
+TRISC7                            00000007
+TRISD                             00000088
+TRISD0                            00000000
+TRISD1                            00000001
+TRISD2                            00000002
+TRISD3                            00000003
+TRISD4                            00000004
+MPASM 5.81                      ODEV6KOD.ASM   12-3-2018  2:10:49         PAGE 14
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+TRISD5                            00000005
+TRISD6                            00000006
+TRISD7                            00000007
+TRISE                             00000089
+TRISE0                            00000000
+TRISE1                            00000001
+TRISE2                            00000002
+TRMT                              00000001
+TX8_9                             00000006
+TX9                               00000006
+TX9D                              00000000
+TXD8                              00000000
+TXEN                              00000005
+TXIE                              00000004
+TXIF                              00000004
+TXREG                             00000019
+TXSTA                             00000098
+UA                                00000001
+W                                 00000000
+WCOL                              00000007
+WR                                00000001
+WREN                              00000002
+WRERR                             00000003
+WRITE                             00000080
+WRITE10                           00000095
+WRITE100                          0000009D
+WRITE100K                         0000005E
+WRITE10K                          00000055
+WRITE1K                           0000004F
+WRITEKESME                        0000003D
+Z                                 00000002
+_BODEN_OFF                        00003FBF
+_BODEN_ON                         00003FFF
+_BOREN_OFF                        00003FBF
+_BOREN_ON                         00003FFF
+_CONFIG                           00002007
+_CPD_OFF                          00003FFF
+_CPD_ON                           00003EFF
+_CP_ALL                           00001FFF
+_CP_OFF                           00003FFF
+_CP_ON                            00001FFF
+_DEBUG_OFF                        00003FFF
+_DEBUG_ON                         000037FF
+_DEVID1                           00002006
+_FOSC_EXTRC                       00003FFF
+_FOSC_HS                          00003FFE
+_FOSC_LP                          00003FFC
+_FOSC_XT                          00003FFD
+_HS_OSC                           00003FFE
+_IDLOC0                           00002000
+_IDLOC1                           00002001
+_IDLOC2                           00002002
+_IDLOC3                           00002003
+MPASM 5.81                      ODEV6KOD.ASM   12-3-2018  2:10:49         PAGE 15
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+_LP_OSC                           00003FFC
+_LVP_OFF                          00003F7F
+_LVP_ON                           00003FFF
+_PWRTE_OFF                        00003FFF
+_PWRTE_ON                         00003FF7
+_RC_OSC                           00003FFF
+_WDTE_OFF                         00003FFB
+_WDTE_ON                          00003FFF
+_WDT_OFF                          00003FFB
+_WDT_ON                           00003FFF
+_WRT_1FOURTH                      00003BFF
+_WRT_256                          00003DFF
+_WRT_HALF                         000039FF
+_WRT_OFF                          00003FFF
+_XT_OSC                           00003FFD
+__16F877A                         00000001
+
+Errors   :     0
+Warnings :    10 reported,     0 suppressed
+Messages :    14 reported,     0 suppressed
+
+

@@ -1,0 +1,11 @@
+Warning[207] C:\USERS\MU\DESKTOP\ASSEMBLY\BASAMAKBULMA.X\NEWASMTEMPLATE.ASM 4 : Found label after column 1. (SAYI)
+Warning[207] C:\USERS\MU\DESKTOP\ASSEMBLY\BASAMAKBULMA.X\NEWASMTEMPLATE.ASM 5 : Found label after column 1. (BIRLER)
+Warning[207] C:\USERS\MU\DESKTOP\ASSEMBLY\BASAMAKBULMA.X\NEWASMTEMPLATE.ASM 6 : Found label after column 1. (ONLAR)
+Warning[207] C:\USERS\MU\DESKTOP\ASSEMBLY\BASAMAKBULMA.X\NEWASMTEMPLATE.ASM 7 : Found label after column 1. (ON)
+Warning[207] C:\USERS\MU\DESKTOP\ASSEMBLY\BASAMAKBULMA.X\NEWASMTEMPLATE.ASM 8 : Found label after column 1. (TEMP)
+Message[302] C:\USERS\MU\DESKTOP\ASSEMBLY\BASAMAKBULMA.X\NEWASMTEMPLATE.ASM 13 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\MU\DESKTOP\ASSEMBLY\BASAMAKBULMA.X\NEWASMTEMPLATE.ASM 15 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\MU\DESKTOP\ASSEMBLY\BASAMAKBULMA.X\NEWASMTEMPLATE.ASM 16 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\MU\DESKTOP\ASSEMBLY\BASAMAKBULMA.X\NEWASMTEMPLATE.ASM 17 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[305] C:\USERS\MU\DESKTOP\ASSEMBLY\BASAMAKBULMA.X\NEWASMTEMPLATE.ASM 37 : Using default destination of 1 (file).
+Message[305] C:\USERS\MU\DESKTOP\ASSEMBLY\BASAMAKBULMA.X\NEWASMTEMPLATE.ASM 41 : Using default destination of 1 (file).

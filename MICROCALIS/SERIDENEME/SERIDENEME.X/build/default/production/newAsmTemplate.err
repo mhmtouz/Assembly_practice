@@ -1,0 +1,10 @@
+Warning[207] C:\USERS\BLACK\DESKTOP\MICROCALIS\SERIDENEME\SERIDENEME.X\NEWASMTEMPLATE.ASM 3 : Found label after column 1. (DEGER)
+Warning[207] C:\USERS\BLACK\DESKTOP\MICROCALIS\SERIDENEME\SERIDENEME.X\NEWASMTEMPLATE.ASM 4 : Found label after column 1. (TEMP)
+Message[302] C:\USERS\BLACK\DESKTOP\MICROCALIS\SERIDENEME\SERIDENEME.X\NEWASMTEMPLATE.ASM 25 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\BLACK\DESKTOP\MICROCALIS\SERIDENEME\SERIDENEME.X\NEWASMTEMPLATE.ASM 26 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\BLACK\DESKTOP\MICROCALIS\SERIDENEME\SERIDENEME.X\NEWASMTEMPLATE.ASM 29 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\BLACK\DESKTOP\MICROCALIS\SERIDENEME\SERIDENEME.X\NEWASMTEMPLATE.ASM 39 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\BLACK\DESKTOP\MICROCALIS\SERIDENEME\SERIDENEME.X\NEWASMTEMPLATE.ASM 43 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\BLACK\DESKTOP\MICROCALIS\SERIDENEME\SERIDENEME.X\NEWASMTEMPLATE.ASM 54 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Warning[202] C:\USERS\BLACK\DESKTOP\MICROCALIS\SERIDENEME\SERIDENEME.X\NEWASMTEMPLATE.ASM 103 : Argument out of range.  Least significant bits used.
+Warning[205] C:\USERS\BLACK\DESKTOP\MICROCALIS\SERIDENEME\SERIDENEME.X\NEWASMTEMPLATE.ASM 109 : Found directive in column 1. (END)

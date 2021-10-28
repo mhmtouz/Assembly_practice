@@ -1,0 +1,24 @@
+Warning[207] C:\USERS\BLACK\DESKTOP\ODEV6\ODEV6.X\ODEV6KOD.ASM 4 : Found label after column 1. (KESMESAYAC)
+Warning[207] C:\USERS\BLACK\DESKTOP\ODEV6\ODEV6.X\ODEV6KOD.ASM 5 : Found label after column 1. (TEMP)
+Warning[207] C:\USERS\BLACK\DESKTOP\ODEV6\ODEV6.X\ODEV6KOD.ASM 6 : Found label after column 1. (BEKLE)
+Warning[207] C:\USERS\BLACK\DESKTOP\ODEV6\ODEV6.X\ODEV6KOD.ASM 7 : Found label after column 1. (BEKLE2)
+Warning[207] C:\USERS\BLACK\DESKTOP\ODEV6\ODEV6.X\ODEV6KOD.ASM 8 : Found label after column 1. (SAYAC1)
+Warning[207] C:\USERS\BLACK\DESKTOP\ODEV6\ODEV6.X\ODEV6KOD.ASM 9 : Found label after column 1. (SAYAC10)
+Warning[207] C:\USERS\BLACK\DESKTOP\ODEV6\ODEV6.X\ODEV6KOD.ASM 10 : Found label after column 1. (SAYAC100)
+Warning[207] C:\USERS\BLACK\DESKTOP\ODEV6\ODEV6.X\ODEV6KOD.ASM 11 : Found label after column 1. (SAYAC1K)
+Warning[207] C:\USERS\BLACK\DESKTOP\ODEV6\ODEV6.X\ODEV6KOD.ASM 12 : Found label after column 1. (SAYAC10K)
+Warning[207] C:\USERS\BLACK\DESKTOP\ODEV6\ODEV6.X\ODEV6KOD.ASM 13 : Found label after column 1. (SAYAC100K)
+Message[302] C:\USERS\BLACK\DESKTOP\ODEV6\ODEV6.X\ODEV6KOD.ASM 20 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\BLACK\DESKTOP\ODEV6\ODEV6.X\ODEV6KOD.ASM 22 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\BLACK\DESKTOP\ODEV6\ODEV6.X\ODEV6KOD.ASM 23 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\BLACK\DESKTOP\ODEV6\ODEV6.X\ODEV6KOD.ASM 24 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\BLACK\DESKTOP\ODEV6\ODEV6.X\ODEV6KOD.ASM 46 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[305] C:\USERS\BLACK\DESKTOP\ODEV6\ODEV6.X\ODEV6KOD.ASM 97 : Using default destination of 1 (file).
+Message[305] C:\USERS\BLACK\DESKTOP\ODEV6\ODEV6.X\ODEV6KOD.ASM 108 : Using default destination of 1 (file).
+Message[305] C:\USERS\BLACK\DESKTOP\ODEV6\ODEV6.X\ODEV6KOD.ASM 117 : Using default destination of 1 (file).
+Message[305] C:\USERS\BLACK\DESKTOP\ODEV6\ODEV6.X\ODEV6KOD.ASM 182 : Using default destination of 1 (file).
+Message[305] C:\USERS\BLACK\DESKTOP\ODEV6\ODEV6.X\ODEV6KOD.ASM 190 : Using default destination of 1 (file).
+Message[305] C:\USERS\BLACK\DESKTOP\ODEV6\ODEV6.X\ODEV6KOD.ASM 206 : Using default destination of 1 (file).
+Message[305] C:\USERS\BLACK\DESKTOP\ODEV6\ODEV6.X\ODEV6KOD.ASM 228 : Using default destination of 1 (file).
+Message[305] C:\USERS\BLACK\DESKTOP\ODEV6\ODEV6.X\ODEV6KOD.ASM 237 : Using default destination of 1 (file).
+Message[305] C:\USERS\BLACK\DESKTOP\ODEV6\ODEV6.X\ODEV6KOD.ASM 246 : Using default destination of 1 (file).

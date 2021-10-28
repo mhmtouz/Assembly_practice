@@ -1,0 +1,21 @@
+   LIST P=16F877A
+    #INCLUDE <P16F877A.INC>
+    
+    SAYI1 EQU 0x20
+     SSAY EQU 0x21
+
+    ORG 0x00
+    GOTO MAIN
+MAIN
+    MOVLW D'4'
+    MOVWF SAYI1
+    BTFSS SAYI1,0
+    GOTO CIFT
+    GOTO TEK
+TEK
+    DECF SSAY
+    CIFT
+    INCF SSAY
+    
+    END
+

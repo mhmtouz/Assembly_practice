@@ -1,0 +1,36 @@
+MPLINK 5.09, LINKER
+Linker Map File - Created Fri Oct 12 23:31:51 2018
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000026
+                   .cinit    romdata   0x000013    program   0x000004
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000014      
+            21 out of 8454 program addresses used, program memory utilization is 0%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                    BUTON   0x00000d    program     static C:\Users\black\Desktop\MICROCALIS\DENEME1\TOPLAMA.X\TOPLAMA.asm
+                    ISLEM   0x000010    program     static C:\Users\black\Desktop\MICROCALIS\DENEME1\TOPLAMA.X\TOPLAMA.asm
+                     MAIN   0x000001    program     static C:\Users\black\Desktop\MICROCALIS\DENEME1\TOPLAMA.X\TOPLAMA.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                     MAIN   0x000001    program     static C:\Users\black\Desktop\MICROCALIS\DENEME1\TOPLAMA.X\TOPLAMA.asm
+                    BUTON   0x00000d    program     static C:\Users\black\Desktop\MICROCALIS\DENEME1\TOPLAMA.X\TOPLAMA.asm
+                    ISLEM   0x000010    program     static C:\Users\black\Desktop\MICROCALIS\DENEME1\TOPLAMA.X\TOPLAMA.asm
+
+

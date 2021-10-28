@@ -1,0 +1,113 @@
+    LIST P=16F877A
+    #INCLUDE <P16F877A.INC>
+    __CONFIG H'3F31'
+    SAY EQU 0X24
+    BIR EQU 0X25
+    ON EQU 0X28
+    SB1 EQU 0X26
+    SB2 EQU 0X27
+    ORG 0X00
+    GOTO MAIN
+    ORG 0X04
+    GOTO KESME
+MAIN
+    BANKSEL TRISD
+    CLRF TRISB
+    CLRF TRISA
+    BANKSEL ADCON1
+    MOVLW 0X06
+    MOVWF ADCON1
+    BANKSEL PORTA
+    CLRF PORTA
+    CLRF PORTB
+    MOVLW 0X0A
+    MOVWF SAY
+    MOVWF BIR
+    MOVLW 0X06
+    MOVWF ON
+    BANKSEL INTCON
+    BSF INTCON,GIE
+    BSF INTCON,PEIE
+    BANKSEL TMR1L
+    MOVLW H'3C'
+    MOVWF TMR1H
+    MOVLW H'B0'
+    MOVWF TMR1L
+    BANKSEL PIE1
+    BSF PIE1,TMR1IE
+    BANKSEL T1CON
+    BCF T1CON,T1CKPS1
+    BSF T1CON,T1CKPS0    
+    BSF T1CON,TMR1ON
+DONGU
+    GOTO DONGU
+KESME
+    BANKSEL PIR1
+    BCF PIR1,TMR1IF
+    BANKSEL TMR1L
+    MOVLW H'3C'
+    MOVWF TMR1H
+    MOVLW H'B0'
+    MOVWF TMR1L
+    DECFSZ SAY,F
+    GOTO SON
+    CALL ISLEM
+    BANKSEL SAY
+    MOVLW 0X0A
+    MOVWF SAY
+    NOP 
+SON
+    RETFIE
+ISLEM
+    BANKSEL PORTA
+    BCF PORTA,0
+    BSF PORTA,1	
+    DECFSZ BIR,F
+    GOTO YAK
+    MOVLW 0X0A
+    MOVWF BIR
+    
+    DECFSZ ON,F
+    GOTO YAK2
+    MOVLW 0X06
+    MOVWF ON
+    GOTO SON
+YAK
+    MOVFW BIR
+    CALL LOOKUP
+    MOVWF PORTB
+    CALL BEKLE
+YAK2
+    BSF PORTA,0
+    BCF PORTA,1
+    MOVFW ON
+    CALL LOOKUP
+    MOVWF PORTB
+    CALL BEKLE
+    GOTO SON
+LOOKUP
+    ADDWF PCL,F
+    RETLW h'3F'                              
+    RETLW h'06'                             
+    RETLW h'5B'                              
+    RETLW h'4F'                             
+    RETLW h'66'                             
+    RETLW h'6D'                           
+    RETLW h'7D'                             
+    RETLW h'07'                             
+    RETLW h'7F'
+    RETLW h'6F'
+    RETURN
+BEKLE
+    MOVLW 0X10
+    MOVWF SB1
+BEKLE2
+    MOVLW 0XF0
+    MOVWF SB2
+BEKLED
+    DECFSZ SB2
+    GOTO BEKLED
+    DECFSZ SB1
+    GOTO BEKLE2
+    RETURN
+    END

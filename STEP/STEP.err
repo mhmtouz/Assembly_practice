@@ -1,0 +1,7 @@
+Message[302] C:\USERS\EKREM\DOCUMENTS\PROTEUS 8.7\STEP\STEP.ASM 199 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\EKREM\DOCUMENTS\PROTEUS 8.7\STEP\STEP.ASM 210 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\EKREM\DOCUMENTS\PROTEUS 8.7\STEP\STEP.ASM 211 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\EKREM\DOCUMENTS\PROTEUS 8.7\STEP\STEP.ASM 278 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\EKREM\DOCUMENTS\PROTEUS 8.7\STEP\STEP.ASM 279 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\EKREM\DOCUMENTS\PROTEUS 8.7\STEP\STEP.ASM 280 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Warning[205] C:\USERS\EKREM\DOCUMENTS\PROTEUS 8.7\STEP\STEP.ASM 303 : Found directive in column 1. (END)

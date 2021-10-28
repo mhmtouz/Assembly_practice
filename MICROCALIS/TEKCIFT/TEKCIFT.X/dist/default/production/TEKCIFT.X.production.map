@@ -1,0 +1,36 @@
+MPLINK 5.09, LINKER
+Linker Map File - Created Tue Oct 23 10:03:16 2018
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000010
+                   .cinit    romdata   0x000008    program   0x000004
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000009      
+            10 out of 8454 program addresses used, program memory utilization is 0%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                     CIFT   0x000007    program     static C:\Users\black\Desktop\MICROCALIS\TEKCIFT\TEKCIFT.X\newAsmTemplate.asm
+                     MAIN   0x000001    program     static C:\Users\black\Desktop\MICROCALIS\TEKCIFT\TEKCIFT.X\newAsmTemplate.asm
+                      TEK   0x000006    program     static C:\Users\black\Desktop\MICROCALIS\TEKCIFT\TEKCIFT.X\newAsmTemplate.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                     MAIN   0x000001    program     static C:\Users\black\Desktop\MICROCALIS\TEKCIFT\TEKCIFT.X\newAsmTemplate.asm
+                      TEK   0x000006    program     static C:\Users\black\Desktop\MICROCALIS\TEKCIFT\TEKCIFT.X\newAsmTemplate.asm
+                     CIFT   0x000007    program     static C:\Users\black\Desktop\MICROCALIS\TEKCIFT\TEKCIFT.X\newAsmTemplate.asm
+
+

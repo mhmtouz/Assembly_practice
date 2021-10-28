@@ -1,0 +1,11 @@
+Warning[207] C:\USERS\MU\DESKTOP\ASSEMBLY\DOT2.X\NEWASMTEMPLATE.ASM 4 : Found label after column 1. (SAYACDONGU)
+Warning[207] C:\USERS\MU\DESKTOP\ASSEMBLY\DOT2.X\NEWASMTEMPLATE.ASM 5 : Found label after column 1. (SAYACHB)
+Warning[207] C:\USERS\MU\DESKTOP\ASSEMBLY\DOT2.X\NEWASMTEMPLATE.ASM 6 : Found label after column 1. (SAYACHC)
+Warning[207] C:\USERS\MU\DESKTOP\ASSEMBLY\DOT2.X\NEWASMTEMPLATE.ASM 7 : Found label after column 1. (GEC1)
+Warning[207] C:\USERS\MU\DESKTOP\ASSEMBLY\DOT2.X\NEWASMTEMPLATE.ASM 8 : Found label after column 1. (GEC2)
+Message[302] C:\USERS\MU\DESKTOP\ASSEMBLY\DOT2.X\NEWASMTEMPLATE.ASM 15 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\MU\DESKTOP\ASSEMBLY\DOT2.X\NEWASMTEMPLATE.ASM 17 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\MU\DESKTOP\ASSEMBLY\DOT2.X\NEWASMTEMPLATE.ASM 19 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Warning[207] C:\USERS\MU\DESKTOP\ASSEMBLY\DOT2.X\NEWASMTEMPLATE.ASM 29 : Found label after column 1. (DONGU)
+Message[305] C:\USERS\MU\DESKTOP\ASSEMBLY\DOT2.X\NEWASMTEMPLATE.ASM 42 : Using default destination of 1 (file).
+Message[305] C:\USERS\MU\DESKTOP\ASSEMBLY\DOT2.X\NEWASMTEMPLATE.ASM 43 : Using default destination of 1 (file).
